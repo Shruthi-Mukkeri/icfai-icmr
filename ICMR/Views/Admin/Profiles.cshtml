@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ICMR.Models.ICMRFaculty>
+
+@{
+    ViewBag.Title = "Faculty Profiles";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <h3>Faculty Profiles</h3>
+                <a href="@Url.Action("AddProfiles", "Admin")" class="btn btn-danger mb-3">Add New Faculty</a>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Faculty Name</th>
+                            <th>Designation</th>
+                            <th>Experience</th>
+                            <th>Image</th>
+                            <th>Resume</th>
+                            <th>Created By</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var faculty in Model)
+                        {
+                            <tr>
+                                <td>@faculty.FacultyName</td>
+                                <td>@faculty.FacultyDesignation</td>
+                                <td>@faculty.FacultyExperience Years</td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(faculty.FacultyImage))
+                                    {
+                                        <img src="@Url.Content("~/Uploads/Images/" + faculty.FacultyImage)" alt="Faculty Image" width="50" height="50" />
+                                    }
+                                    else
+                                    {
+                                        <span>No Image</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(faculty.FacultyResume))
+                                    {
+                                        <a href="@Url.Content("~/Uploads/PDFs/" + faculty.FacultyResume)" target="_blank">View Resume</a>
+                                    }
+                                    else
+                                    {
+                                        <span>No Resume</span>
+                                    }
+                                </td>
+                                <td>@faculty.CreatedBy</td>
+                                <td>
+                                    <a href="@Url.Action("EditPrifile", "Admin", new { id = faculty.FacultyId })" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="@Url.Action("DeletePrifile", "Admin", new { id = faculty.FacultyId })" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    
+    </div>
+</div>
+

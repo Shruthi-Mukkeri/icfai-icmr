@@ -1,0 +1,76 @@
+﻿@model ICMR.Models.ICMRFaculty
+
+@{
+    ViewBag.Title = "Add Faculty Profile";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+<div class="container mt-4">
+    <div class="card border-0 shadow">
+        <div class="card-body">
+            <h3 class="mb-4">Add Faculty Profile</h3>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <script>
+        alert('@TempData["SuccessMessage"]');
+                </script>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <script>
+        alert('@TempData["ErrorMessage"]');
+                </script>
+            }
+
+            <form action="@Url.Action("AddProfiles", "Admin")" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+
+                <div class="row mb-3">
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="text" id="FacultyName" name="FacultyName" class="form-control" placeholder="Faculty Name" required>
+                        <label for="FacultyName">Faculty Name</label>
+                    </div>
+
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="text" id="FacultyDesignation" name="FacultyDesignation" class="form-control" placeholder="Designation">
+                        <label for="FacultyDesignation">Designation</label>
+                    </div>
+
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="text" id="FacultyQualification" name="FacultyQualification" class="form-control" placeholder="Qualification">
+                        <label for="FacultyQualification">Qualification</label>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="number" id="FacultyExperience" name="FacultyExperience" class="form-control" placeholder="Experience">
+                        <label for="FacultyExperience">Experience (Years)</label>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="ImageFile" class="form-label">Upload Image</label>
+                        <input type="file" id="ImageFile" name="ImageFile" class="form-control" accept="image/*">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="PdfFile" class="form-label">Upload Resume (PDF)</label>
+                        <input type="file" id="PdfFile" name="PdfFile" class="form-control" accept=".pdf,application/pdf">
+                    </div>
+                </div>
+
+
+
+                <div class="">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger ">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+</div>
+

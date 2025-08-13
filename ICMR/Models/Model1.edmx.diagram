@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="251213c4627a4d9e9112c116cbe0c593" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ICMRModel.AvaCas" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.avashortcas" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.ICMREvent" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.ICMRFaculty" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.ICMRLogin" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.Master_icmr" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.proccas" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.tblCaseDetail" Width="1.5" PointX="8" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.tblChapter" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.tblEbookCas" Width="1.5" PointX="8" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.tblEbook" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.tblTextBookImg" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICMRModel.tblTextBook" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="ICMRModel.FK__tblCaseDe__CaseI__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="ICMRModel.FK_tblChapters_tblTextBooks" ManuallyRouted="false" />
+        <AssociationConnector Association="ICMRModel.FK_tblEbookCases_tblEbooks" ManuallyRouted="false" />
+        <AssociationConnector Association="ICMRModel.FK_tblTextBookImgs_tblTextBooks" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ICMRModel.tblCaseStudy" Width="1.5" PointX="15.625" PointY="1.375" />
+        <EntityTypeShape EntityType="ICMRModel.tblCaseStudyVolume" Width="1.5" PointX="13.375" PointY="1" />
+        <AssociationConnector Association="ICMRModel.FK_tblCaseStudy_tblCaseStudyVolume" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

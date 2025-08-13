@@ -1,0 +1,206 @@
+﻿
+@model List<ICMR.Models.avashortcas>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Business Environment Management Case Studies | Strategic Business | MBA | Business Environment Economics | Marketing | Management | Operations | Strategy | Business | Case Study";
+    ViewBag.MetaDescription = "Representing a broad range of management subjects, the ICMR Case Collection provides teachers, corporate trainers, and management professionals with a variety of teaching and reference material. The collection consists of Business Environment case studies and research reports on a wide range of companies and industries.";
+    ViewBag.MetaKeywords = "Business Strategy, Marketing, Finance, Human Resource Management, IT and Systems, Operations, Economics, Leadership and Entrepreneurship, Business Ethics, CSR and Sustainability, Business Environment";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Url = "business-environment";
+}
+
+<section class="Common-Section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                <div class="breadcrumbs pb-0" data-aos="fade-up">
+                    <ol>
+                        <li><a href="~/">Home</a></li>
+                        <li>Case Collection</li>
+                        <li>Short Cases</li>
+                        @*<li id="categoryHeading">
+                                @ViewBag.SelectedCategory Case Studies
+                            </li>*@
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section data-aos="fade-up">
+    <div class="container">
+        <div class="row customRow">
+            <div class="col-md-12">
+                <div>
+                    <h3 id="categoryHeading">@ViewBag.SelectedCategory Case Studies</h3>
+                    <p class="mb-1">Purchase Process: 1] Select Cases 2] Add to Cart 3] Checkout</p>
+                    <p class="text-danger">
+                        In case you are not able to complete the transaction successfully, please send an email to info@icmrindia.org
+                    </p>
+                </div>
+                <div id="caseStudiesTable">
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        <!-- Header Row -->
+                        <div class="row fw-bold border-bottom py-2 ">
+                            <div class="col-md-7 text-center">Case Title</div>
+                            <div class="col-md-1 text-center">Case Code</div>
+                            <div class="col-md-1 text-center">Details</div>
+                            <div class="col-md-1 text-center">Price</div>
+                            <div class="col-md-2 text-center">Add to Cart</div>
+                        </div>
+
+                        <!-- Data Rows -->
+                        foreach (var item in Model)
+                        {
+                            <div class="card mb-2 border-0 shadow-sm case-study-item">
+                                <div class="card-body py-2">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-7 ">
+                                            <h6 class="mb-0">@item.casetitle</h6>
+                                        </div>
+
+                                        <div class="col-md-1 text-center">
+                                            <span class="text-muted">@item.casecode</span>
+                                        </div>
+
+                                        <div class="col-md-1 text-center">
+                                            <a href="@Url.Action("CaseStudyDetails", "Home", new { id = item.Id })" @*target="_blank"*@ class="btn btn-sm btn-outline-dark">
+                                                Details <i class="bi bi-arrow-up-right"></i>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-md-1 text-center">
+                                            <span><i class="bi bi-currency-rupee"></i> @item.pricers</span>
+                                        </div>
+
+                                        <div class="col-md-2 text-center">
+                                            <button class="btn btn-danger btn-sm text-white add-to-cart-btn"
+                                                    data-id="@item.Id"
+                                                    data-type="short">
+                                                <i class="bi bi-handbag"></i> Add to Cart
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <!-- Pagination Placeholder -->
+                        <div id="pagination" class="text-center mt-3"></div>
+                    }
+                    else
+                    {
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-2 text-center">
+                                <h4 class="text-muted">No cases found.</h4>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.add-to-cart-btn').click(function (e) {
+            e.preventDefault();
+
+            var caseId = $(this).data('id');
+            var caseType = $(this).data('type');
+
+            $.ajax({
+                url: '/Home/AddToCart',
+                type: 'POST',
+                data: {
+                    articleId: caseId,
+                    type: caseType
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert("Added to cart!");
+                        $('#cartCount').text(response.cartCount); // ✅ Set count dynamically
+                    } else {
+                        alert(response.message || "Could not add to cart.");
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while adding to cart.");
+                }
+            });
+        });
+    });
+
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Update Sidebar Content when clicked
+        $(".sidebar-link, .case-link").click(function () {
+            var contentTitle = $(this).text();
+            $("#contentTitle").text(contentTitle);
+            $("#contentBody").text("Displaying details for " + contentTitle);
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const itemsPerPage = 20;
+        const items = document.querySelectorAll(".case-study-item");
+        const totalItems = items.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const pagination = document.getElementById("pagination");
+
+        function showPage(page) {
+            items.forEach((item, index) => {
+                item.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? "block" : "none";
+            });
+
+            // Highlight active page
+            document.querySelectorAll(".pagination-btn").forEach(btn => btn.classList.remove("active"));
+            const currentBtn = document.querySelector(`.pagination-btn[data-page="${page}"]`);
+            if (currentBtn) currentBtn.classList.add("active");
+        }
+
+        function createPaginationButtons() {
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement("button");
+                btn.innerText = i;
+                btn.classList.add("btn", "btn-sm", "btn-outline-primary", "pagination-btn", "me-1");
+                btn.setAttribute("data-page", i);
+                btn.addEventListener("click", () => showPage(i));
+                pagination.appendChild(btn);
+            }
+        }
+
+        if (totalItems > itemsPerPage) {
+            createPaginationButtons();
+        }
+
+        showPage(1); // Load first page initially
+    });
+</script>
+
+
+<style>
+    .pagination-btn.active {
+        background-color: #0d6efd;
+        color: white;
+    }
+</style>

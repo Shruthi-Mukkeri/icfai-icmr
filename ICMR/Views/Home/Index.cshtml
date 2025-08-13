@@ -1,0 +1,1014 @@
+﻿@model List<ICMR.Models.AvaCas>
+
+@{
+    ViewBag.Title = "Management Case Studies with Solutions - ICMR India";
+    ViewBag.MetaDescription = "ICMR is a premier case development center developing high-quality teaching cases with solutions in Management area. Business research, management consulting";
+    ViewBag.MetaKeywords = "Management Case Studies, Case Studies, Case Writing, Management Case Study, Case Study Awards, Case Writing Competitions, Management Cases with Solutions, Case Writing Workshops, Business Case Studies, Marketing Case Studies";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Url = "/";
+}
+
+
+<section class="bg7">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                <div id="carouselExampleIndicators" class="carousel slide my-4 custom-carousel" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-indicators">
+                        <div class="custom-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <picture>
+                                <!-- Small screens (mobile) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-1-480w.jpg" media="(max-width: 576px)" width="480" height="768">
+                                <!-- Medium screens (tablets) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-1-768w.jpg" media="(max-width: 992px)" width="768" height="432">
+                                <!-- Large screens (desktops) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-1.jpg" media="(min-width: 993px)" width="1200" height="675">
+                                <!-- Fallback for browsers that do not support <picture> -->
+                                <img fetchpriority="low" src="~/assets/img/banner/ICMR-Banner-1.jpg" class="img-fluid w-100 rounded-4" alt="ICMR Publications, IFHE Hyderbad" />
+                            </picture>
+
+                            @*<img src="~/assets/img/banner/ICMR-Banner-1.jpg" class="d-block custom-width w-100 rounded-4" alt="...">*@
+                        </div>
+                        <div class="carousel-item">
+                            <picture>
+                                <!-- Small screens (mobile) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-2-480w.jpg" media="(max-width: 576px)" width="480" height="768">
+                                <!-- Medium screens (tablets) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-2-768w.jpg" media="(max-width: 992px)" width="768" height="432">
+                                <!-- Large screens (desktops) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-2.jpg" media="(min-width: 993px)" width="1200" height="675">
+                                <!-- Fallback for browsers that do not support <picture> -->
+                                <img fetchpriority="low" src="~/assets/img/banner/ICMR-Banner-2.jpg" class="img-fluid w-100 rounded-4" alt="ICMR Publications, Top 5 best publications in India." />
+                            </picture>
+                        </div>
+                        <div class="carousel-item">
+                            <picture>
+                                <!-- Small screens (mobile) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-3-480w.jpg" media="(max-width: 576px)" width="480" height="768">
+                                <!-- Medium screens (tablets) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-3-768w.jpg" media="(max-width: 992px)" width="768" height="432">
+                                <!-- Large screens (desktops) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-3.jpg" media="(min-width: 993px)" width="1200" height="675">
+                                <!-- Fallback for browsers that do not support <picture> -->
+                                <img fetchpriority="low" src="~/assets/img/banner/ICMR-Banner-3.jpg" class="img-fluid w-100 rounded-4" alt="ICMR Publications, best publications in India." />
+                            </picture>
+                        </div>
+                        <div class="carousel-item">
+                            <picture>
+                                <!-- Small screens (mobile) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-4-480w.jpg" media="(max-width: 576px)" width="480" height="768">
+                                <!-- Medium screens (tablets) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-4-768w.jpg" media="(max-width: 992px)" width="768" height="432">
+                                <!-- Large screens (desktops) -->
+                                <source srcset="~/assets/img/banner/ICMR-Banner-4.jpg" media="(min-width: 993px)" width="1200" height="675">
+                                <!-- Fallback for browsers that do not support <picture> -->
+                                <img fetchpriority="low" src="~/assets/img/banner/ICMR-Banner-4.jpg" class="img-fluid w-100 rounded-4" alt="ICMR Publications, best publications in Telanagana." />
+                            </picture>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true">
+                            <i class="bi bi-chevron-left text-black fs-4 fw-bold"></i>
+                        </span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true">
+                            <i class="bi bi-chevron-right text-black fs-4 fw-bold"></i>
+                        </span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5" data-aos="fade-up">
+    <div class="input-placeholder p-2">
+        <i class="bi bi-search"></i>
+        <div class="search-position">
+            <input id="search_input" type="text" class="searchbox border-0 ps-2" autocomplete="off" required="">
+            <div class="search_placeholder text-secondary">
+                Search for
+                <span class="text_type " data-wait="3000" data-words='["Full Cases", "Case Volumes", "Compact Cases","Multimedia Cases"]'>
+                    <span class="typing"></span>
+                </span>
+            </div>
+        </div>
+        <button class="btn btn-danger">Search</button>
+    </div>
+</section>
+
+
+<section class="cases-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-2">
+                <div class="card border-0 shadow h-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center case-heading card-header bg-white p-3">
+                        <h4 class="mb-0">New Cases</h4>
+                        <img src="~/assets/img/new.png" alt="New Cases" width="92" height="92" />
+                    </div>
+                    <div class="card-body">
+                        @foreach (var item in Model.OrderByDescending(x => x.Id).Take(3))
+                        {
+                            <div>
+                                <div class="d-flex mb-1">
+                                    <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                    <a href="@Url.Action("CaseStudyDetails", "Home", new { id = item.Id })" class="case-title" rel="bookmark">@item.casetitle</a>
+                                </div>
+                                <div class="ms-4 topic-details">
+                                    <span class="small text-dark-emphasis">Topic:</span>
+                                    <p>@item.subject</p>
+                                </div>
+                                <div class="ms-4">
+                                    <a class="text-danger" href="@Url.Action("CaseStudyDetails", "Home", new { id = item.Id })">
+                                        View Case <span><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr />
+                        }
+
+                         
+                        <div class="text-end position-absolute end-0 bottom-0 mb-3 me-3">
+                            <a class="rts-theme-btn btn-arrow" href="~/icmr-case-studies">
+                                View All <span><i class="bi bi-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    @*<div class="text-center case-heading card-header bg-white p-3">
+                            <h4 class="mb-0">New Cases</h4>
+                            <img src="~/assets/img/new.png" alt="New Cases" width="92" height="92" />
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <div class="d-flex mb-1">
+                                    <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                    <a href="#" class="case-title" rel="bookmark">ASICS Shoes-Can a Record Past Performance Guarantee Future Success? </a>
+                                </div>
+                                <div class="ms-4 topic-details">
+                                    <span class="small text-dark-emphasis">Topic:</span>
+                                    <p>
+                                        <a href="#">Business Strategy</a>
+                                    </p>
+                                </div>
+                                <div class="ms-4">
+                                    <a class="text-danger" href="#">
+                                        View Case <span><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div>
+                                <div class="d-flex mb-1">
+                                    <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                    <a href="" class="case-title" rel="bookmark">Nike`s Metaverse Foray: Exploiting a Revenue Opportunity or Riding a Fad? </a>
+                                </div>
+                                <div class="ms-4 topic-details">
+                                    <span class="small text-dark-emphasis">Topic:</span>
+                                    <p>
+                                        <a href="#">Marketing</a>
+                                    </p>
+                                </div>
+                                <div class="ms-4">
+                                    <a class="text-danger" href="#">
+                                        View Case <span><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr />
+                            <div>
+                                <div class="d-flex mb-1">
+                                    <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                    <a href="" class="case-title" rel="bookmark">Tata Motors - Delisting from NYSE</a>
+                                </div>
+                                <div class="ms-4 topic-details">
+                                    <span class="small text-dark-emphasis">Topic:</span>
+                                    <p>
+                                        <a href="#">Finance</a>
+                                    </p>
+                                </div>
+                                <div class="ms-4">
+                                    <a class="text-danger" href="#">
+                                        View Case <span><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-end position-absolute end-0 bottom-0 mb-3 me-3">
+                                <a class="rts-theme-btn btn-arrow" href="/icmr-case-studies">View All <span><i class="bi bi-arrow-right"></i></span></a>
+                            </div>
+                        </div>*@
+
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-2">
+                <div class="card border-0 shadow h-100" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center  card-header bg-white p-3 d-flex justify-content-center align-items-center">
+                        <img src="~/assets/img/trophy.png" alt="title" width="40" height="40" />
+                        <h4 class="mb-0 ms-3">Award-Winning Cases</h4>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="d-flex mb-1">
+                                <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                <a href="#" class="case-title" rel="bookmark">Diversity, Equity, and Inclusion Initiatives at Levi Strauss & Co.: Are They Enough?</a>
+                            </div>
+                            <div class="ms-4 topic-details">
+                                <span class="small text-dark-emphasis">Topic:</span>
+                                <p>
+                                    <a href="#">Strategy & Management</a>
+                                </p>
+                            </div>
+                            <div class="ms-4">
+                                <a class="text-danger" href="#">
+                                    View Case <span><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div>
+                            <div class="d-flex mb-1">
+                                <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                <a href="#" class="case-title" rel="bookmark">Innovations at Phool.co – Creating a Sustainable Future with Circularity</a>
+                            </div>
+                            <div class="ms-4 topic-details">
+                                <span class="small text-dark-emphasis">Topic:</span>
+                                <p>
+                                    <a href="#">Sustainable</a>
+                                </p>
+                            </div>
+                            <div class="ms-4">
+                                <a class="text-danger" href="#">
+                                    View Case <span><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <hr />
+                        <div>
+                            <div class="d-flex mb-1">
+                                <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                <a href="#" class="case-title" rel="bookmark">Melanie Perkins: Poised to Redesign Canva from Tech Unicorn to Tech Giant?</a>
+                            </div>
+                            <div class="ms-4 topic-details">
+                                <span class="small text-dark-emphasis">Topic:</span>
+                                <p>
+                                    <a href="#">Entrepreneurship Development</a>
+                                </p>
+                            </div>
+                            <div class="ms-4">
+                                <a class="text-danger" href="#">
+                                    View Case <span><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-end position-absolute end-0 bottom-0 mb-3 me-3">
+                            <a class="rts-theme-btn btn-arrow" href="~/awards-and-recognitions">View All <span><i class="bi bi-arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-2">
+                <div class="card border-0 shadow h-100" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="text-center  card-header bg-white p-3 d-flex justify-content-center align-items-center">
+                        <img src="~/assets/img/ribbon.png" alt="title" width="40" height="40" />
+                        <h4 class="mb-0 ms-3">Bestselling Cases</h4>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="d-flex mb-1">
+                                <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                <a href="#" class="case-title" rel="bookmark">'Enrich Not Exploit': Can New CSR Strategy Help Body Shop Regain Glory?</a>
+                            </div>
+                            <div class="ms-4 topic-details">
+                                <span class="small text-dark-emphasis">Topic:</span>
+                                <p>
+                                    <a href="#"> Business Ethics</a>
+                                </p>
+                            </div>
+                            <div class="ms-4">
+                                <a class="text-danger" href="#">
+                                    View Case <span><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div>
+                            <div class="d-flex mb-1">
+                                <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                <a href="#" class="case-title" rel="bookmark">Domino's Pizza: Business Continuity Strategy During the Covid-19 Pandemic</a>
+                            </div>
+                            <div class="ms-4 topic-details">
+                                <span class="small text-dark-emphasis">Topic:</span>
+                                <p>
+                                    <a href="#"> Business Strategy</a>
+                                </p>
+                            </div>
+                            <div class="ms-4">
+                                <a class="text-danger" href="#">
+                                    View Case <span><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <hr />
+                        <div>
+                            <div class="d-flex mb-1">
+                                <img src="~/assets/img/redo-arrow.png" alt="title" width="20" height="20" />
+                                <a href="#" class="case-title" rel="bookmark">Digital Transformation at Starbucks</a>
+                            </div>
+                            <div class="ms-4 topic-details">
+                                <span class="small text-dark-emphasis">Topic:</span>
+                                <p>
+                                    <a href="#">  IT and Systems</a>
+                                </p>
+                            </div>
+                            <div class="ms-4">
+                                <a class="text-danger" href="#">
+                                    View Case <span><i class="bi bi-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-end position-absolute end-0 bottom-0 mb-3 me-3">
+                            <a class="rts-theme-btn btn-arrow" href="#">View All <span><i class="bi bi-arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="category-section bg3 overflow-hidden" data-aos="fade-up">
+    <div class="container position-relative z-3">
+        <div class="heading-border">
+            <h2>Case Study Categories</h2>
+            <h6>Varieties and numbers of case studies are available in our repository in different management subject categories. Below are the most popular categories in management areas:</h6>
+        </div>
+        <div class="mt-3 mb-3 text-start" data-aos="fade-up" data-aos-delay="500">
+            <a href="~/icmr-case-studies" target="_blank" class="rts-theme-btn btn-arrow">View More <span><i class="bi bi-arrow-right"></i></span></a>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/Business-Strategy.png" alt="Business Strategy" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Business Strategy</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Strategy" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/Marketing.png" alt="Marketing" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Marketing</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Marketing" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/finance.png" alt="Finance" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Finance</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Finance" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="400">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/hrm.png" alt="Human Resource Management" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Human Resource Management</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Human Resource Management" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="500">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/IT-Systems.png" alt="IT and Systems" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">IT and Systems</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "IT and Systems" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="600">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/Operations.png" alt="Operations" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Operations</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Operations" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/Economics.png" alt="Economics" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Economics</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Economics" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/Leadership.png" alt="Leadership and Entrepreneurship" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">
+                                Leadership and Entrepreneurship
+                            </p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Leadership and Entrepreneurship" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/BECG.png" alt="Business Ethics" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Business Ethics</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Ethics" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="400">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/BENV.png" alt="Business Environment" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Business Environment</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Environment" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="500">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/INS.png" alt="Insurance" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Insurance</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "Insurance" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3 z-3">
+                <div class="category-card shadow" data-aos="fade-up" data-aos-delay="500">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-body-secondary rounded-2 p-2 me-2">
+                            <img src="~/assets/img/case-study/CSR.png" alt="CSR and Sustainability" />
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">CSR and Sustainability</p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <a href="@Url.Action("CaseStudies", "Home", new { category = "CSR and Sustainability" })">
+                            <i class="bi bi-box-arrow-up-right fs-4 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="IBS-bold-circle-right brownCircle d-none d-lg-block"> </div>
+
+    </div>
+</section>
+<section class="achievements-section" data-aos="fade-up">
+    <div class="container">
+        <div class="bg-container p-4">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                    <div class="heading-border" data-aos="fade-up" data-aos-delay="400">
+                        <h2>Achievements</h2>
+                        <p class="visually-hidden">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+
+                    </div>
+                    <div class="mt-3 text-start" data-aos="fade-up" data-aos-delay="500">
+                        <a href="~/achievements" target="_blank" class="rts-theme-btn btn-arrow">View More <span><i class="bi bi-arrow-right"></i></span></a>
+                    </div>
+
+                    <div class="Award-Logos mt-3">
+                        <div class="wrapper">
+                            <div class="carouselAwardlogs1 owl-carousel">
+                                <div class="p-3 h-100">
+                                    <p class="mb-0">
+                                        ICFAI Business School Wins John Molson MBA International Case Writing Competition (2025)
+                                    </p>
+                                </div>
+                                <div class="p-3 h-100">
+                                    <p class="mb-0">22 Cases in The Case Centre’s 2024 Bestselling Cases</p>
+                                </div>
+                                <div class="p-3 h-100">
+                                    <p class="mb-0">ICFAI Business School Wins The Case Hub Case Writing Competition 2024</p>
+                                </div>
+                                <div class="p-3 h-100">
+                                    <p class="mb-0">
+                                        IBS Hyderabad features prominently in The Case Centre's Top 50 Bestselling Case Authors list, 2023 /24
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="bg13" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <img class="img-fluid rounded-4" src="~/assets/img/icmr.jpg" alt="ICMR (IBS Center for Management Research)" />
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="heading-border">
+                    <h2>ICMR (IBS Center for Management Research)</h2>
+                    <h6>Asia Pacific's largest case study repository for management students, faculties, trainers and corporate executives</h6>
+                </div>
+                <div class="text-justify">
+                    <p>ICMR is Asia's most popular repository of management case studies. ICMR Case Collection provides Teachers, Corporate Trainers, and Management Professionals with a variety of teaching and reference material. The collection consists of case studies on a wide range of companies and industries - both Indian and international.</p>
+                    <p>ICMR is involved in business research, management consulting, and the development of case studies and courseware in management.</p>
+                    <p>ICMR also provides knowledge process outsourcing services to international clients. Over 10 million copies of ICMR case studies have been printed in international and Indian textbooks, workbooks and case study volumes. More than 200,000 individual copies of our case studies have been purchased by many of the leading business schools and universities around the world.</p>
+                    <p>Our case studies have won prizes in several global case writing competitions, and also appear in many international management textbooks. More than 5500 case studies, short case studies, and business reports are available for immediate download from this site. The material is available for download as pdf files, with a 'Do Not Copy' watermark.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="Academic-Industry-Section" data-aos="fade-up">
+    <div class="container bg-body-tertiary p-3 rounded-4">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12 my-auto">
+                <div id="carouselExampleFade1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="1000">
+                            <img src="~/assets/img/workshop-conference/conf-work-1.jpg" alt="title conf-work-1" class="d-block w-100 rounded-4" @*alt="conf-work-1"*@>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="~/assets/img/workshop-conference/conf-work-2.jpg" class="d-block w-100 rounded-4" alt="conf-work-2">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="heading-border">
+                    <h3 class="title" data-aos="fade-up" data-aos-delay="400">
+                        National & International<br />
+                        Workshops & Conferences
+                    </h3>
+                </div>
+                <p class="text-justify" data-aos="fade-up" data-aos-delay="500">A one-day seminar cum workshop on the role of case studies in promoting responsible management education in partnership with Principles for Responsible Management Education (PRME) was organized on June 28, 2024. Ms. Amy Memon, Director, Membership and Affiliates for AACSB International, and Ms. Vicky Lester, CEO, The Case Centre were Guest of Honour and Keynote speaker respectively. Ms. Vicky Lester also gave away the trophy to the winners of The Case Centre Awards and Competitions 2024. Close to 60 faculty members and administrators from business schools in and around Hyderabad participated.</p>
+                <p class="text-justify" data-aos="fade-up" data-aos-delay="600">IBS-CRC conducted the 4th International Case Study Conference on Dec 14-15, 2023. The theme of the Conference was The Future of Case Method. Cases were accepted in two tracks: Embracing Sustainability in Business: An Emerging Markets Perspective and Management Lessons from Indian Knowledge System (IKS).....</p>
+            </div>
+            <div class="col-12">
+                <div class="Academic-Logos mt-3" data-aos="fade-up">
+                    <div class="wrapper">
+                        <div class="carouselAcademiclogs-new owl-carousel">
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-1.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-1.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-2.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-2.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-3.jpg" data-fancybox="gallery">
+                                <div class="card">
+
+                                    <img src="~/assets/img/workshop-conference/workshop-3.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-4.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-4.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-5.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-5.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-6.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-6.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/conf-work-1.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/conf-work-1.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/conf-work-2.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/conf-work-2.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-8.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-8.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-9.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-9.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+
+                            <a href="#image" data-src="/assets/img/workshop-conference/workshop-11.jpg" data-fancybox="gallery">
+                                <div class="card">
+                                    <img src="~/assets/img/workshop-conference/workshop-11.jpg" alt="workshop" fetchpriority="low" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="Faculty-Resource-Section pb-2" data-aos="fade-up">
+    <div class="container">
+        <div class="row CustomTabs">
+            <div class="col-xl-12">
+                <ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#pills-1" class="nav-link active" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1" aria-selected="true">New Feed</a>
+                    </li>
+                    <li class="nav-item" role="presentation" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#pills-2" class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2" aria-selected="false" tabindex="-1">Workshop & Conference</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3" id="pills-tabContent" data-aos="fade-up" data-aos-delay="500">
+                    <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                        <div class="Academic-Industry-Section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 Academic-Logos">
+                                        <div class="wrapper">
+                                            <div class="carouselAcademiclogs  owl-carousel">
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <div>
+                                                            <img src="~/assets/img/news/EFMD.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        </div>
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">March 21 - 22, 2025 </span>
+                                                        </p>
+
+                                                        <p class="card-title">ICFAI Business School Wins John Molson MBA ICC Case Writing Competition, 43rd edition 2025! </p>
+
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/bestselling-1.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2024 </span>
+                                                        </p>
+                                                        <p class="card-title">IBS Cases Soar to New Heights 22 Cases in The Case Centre's 2024 Bestselling Cases </p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/bestselling.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2024 </span>
+                                                        </p>
+                                                        <p class="card-title"> IBS Hyderabad features prominently in The Case Centre's Centre's Top 50 Bestselling Case Authors list, 2023/24</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/case-centre.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2024 </span>
+                                                        </p>
+                                                        <p class="card-title"> The Case Centre Impact Index 2024</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/the-case-hub.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2024 </span>
+                                                        </p>
+                                                        <p class="card-title"> ICFAI Business School Wins The Case Hub Case Writing Competition 2024</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/the-case-hub-1.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2024 </span>
+                                                        </p>
+                                                        <p class="card-title"> ICFAI Business School Wins The Case Hub Case Writing Competition 2024</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                        <div class="Academic-Industry-Section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 Academic-Logos">
+                                        <div class="wrapper">
+                                            <div class="carouselAcademiclogs  owl-carousel">
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/449743815_2774991779316331_3935753626572296459_n.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2024 </span>
+                                                        </p>
+                                                        <p class="card-title"> Seminar cum Workshop on Unlocking the Potential of Case Studies in Promoting Sustainable Development Goals</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~/assets/img/news/4th-ICSC-2023.JPG" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2023 </span>
+                                                        </p>
+                                                        <p class="card-title"> 4th International Case Study Conference (ICSC) 2023,</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card border-0 shadow h-100">
+                                                    <div class="card-body">
+                                                        <img src="~//assets/img/news/Workshop-2023.jpg" alt="events-img" class="img-fluid w-100" width="320" height="250" fetchpriority="low" loading="lazy">
+                                                        <p class="pt-3 d-flex align-items-center">
+                                                            <img class="img-fluid cal-icon" src="~/assets/svg-icons/calendar.png" width="20" height="20" alt="calendar" loading="lazy">
+                                                            <span class="ms-2">2023 </span>
+                                                        </p>
+                                                        <p class="card-title"> 3-Day Workshop On Case Writing and Case Teaching</p>
+                                                        <div>
+                                                            <a class="event-btn float-end" href="#" target="_blank">
+                                                                <i class="bi bi-arrow-right"></i>
+                                                                <span class="visually-hidden">View event details</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial p-0 shadow mt-3" data-aos="fade-up">
+    <div class="row m-0">
+        <div class=" col-xl-10 col-lg-10 col-md-12 p-0">
+            <img class="object-fit-cover w-100" alt="testimonial" src="~/assets/img/about-crc-banner.jpg" height="500" loading="lazy" />
+        </div>
+        <div class=" col-xl-2 col-lg-2 col-md-12   p-0 testimonial-rightBox bg-content"></div>
+    </div>
+    <div class="testimonial-container rounded-bottom-4  p-4 about-crc-section" data-aos="fade-up" data-aos-delay="400">
+        <a href="#video" data-src="https://www.youtube.com/watch?v=KLR8tQr22mA" data-fancybox="gallery" class="play_btn float-end" title="IBS-CRC">
+            <i class="bi bi-play-fill"></i>
+        </a>
+    </div>
+    <img class="img-fluid testimonial-shape-1 d-none d-md-block" src="~/assets/img/testimonial-shape-1.png" alt="shape pattern" />
+    <div class="IBS-bold-circle-right  d-none d-md-block"> </div>
+    <div class="IBS-bold-circle-right2  d-none d-md-block"> </div>
+</section>
+
+<script>
+
+    const textElement = document.querySelector(".typing");
+    const words = JSON.parse(document.querySelector(".text_type").getAttribute("data-words"));
+    const wait = parseInt(document.querySelector(".text_type").getAttribute("data-wait"), 10);
+    const searchInput = document.getElementById("search_input");
+    const searchPlaceholder = document.querySelector(".search_placeholder");
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            textElement.textContent = currentWord.substring(0, charIndex--);
+        } else {
+            textElement.textContent = currentWord.substring(0, charIndex++);
+        }
+
+        let typingSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            typingSpeed = wait;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(type, typingSpeed);
+    }
+
+    type();
+
+    // Hide search_placeholder when the user types
+    searchInput.addEventListener("input", function () {
+        if (searchInput.value.trim() !== "") {
+            searchPlaceholder.style.display = "none";
+        } else {
+            searchPlaceholder.style.display = "block";
+        }
+    });
+
+</script>

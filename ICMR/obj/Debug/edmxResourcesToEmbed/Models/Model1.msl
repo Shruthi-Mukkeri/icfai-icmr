@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ICMRModelStoreContainer" CdmEntityContainer="ICMREntities2">
+    <EntitySetMapping Name="AvaCases">
+      <EntityTypeMapping TypeName="ICMRModel.AvaCas">
+        <MappingFragment StoreEntitySet="AvaCases">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="casetitle" ColumnName="casetitle" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="industry" ColumnName="industry" />
+          <ScalarProperty Name="casecode" ColumnName="casecode" />
+          <ScalarProperty Name="caseteach" ColumnName="caseteach" />
+          <ScalarProperty Name="pricers" ColumnName="pricers" />
+          <ScalarProperty Name="pricedollar" ColumnName="pricedollar" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="ordno" ColumnName="ordno" />
+          <ScalarProperty Name="new" ColumnName="new" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="pindustry" ColumnName="pindustry" />
+          <ScalarProperty Name="secindustry" ColumnName="secindustry" />
+          <ScalarProperty Name="subindustry" ColumnName="subindustry" />
+          <ScalarProperty Name="AVacases_keywords" ColumnName="AVacases.keywords" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="centername" ColumnName="centername" />
+          <ScalarProperty Name="SecondaryArea1" ColumnName="SecondaryArea1" />
+          <ScalarProperty Name="SecondaryArea2" ColumnName="SecondaryArea2" />
+          <ScalarProperty Name="SecondaryArea3" ColumnName="SecondaryArea3" />
+          <ScalarProperty Name="SecondaryArea4" ColumnName="SecondaryArea4" />
+          <ScalarProperty Name="SecondaryArea5" ColumnName="SecondaryArea5" />
+          <ScalarProperty Name="SecondaryArea6" ColumnName="SecondaryArea6" />
+          <ScalarProperty Name="Market" ColumnName="Market" />
+          <ScalarProperty Name="Discipline" ColumnName="Discipline" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="p_area" ColumnName="p area" />
+          <ScalarProperty Name="AddToCart" ColumnName="AddToCart" />
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CaseLength" ColumnName="CaseLength" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="PubDate" ColumnName="PubDate" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Themes" ColumnName="Themes" />
+          <ScalarProperty Name="CaseType" ColumnName="CaseType" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="UploadedRole" ColumnName="UploadedRole" />
+          <ScalarProperty Name="UploadedId" ColumnName="UploadedId" />
+          <ScalarProperty Name="LocalIpAddress" ColumnName="LocalIpAddress" />
+          <ScalarProperty Name="PublicIpAddress" ColumnName="PublicIpAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="avashortcases">
+      <EntityTypeMapping TypeName="ICMRModel.avashortcas">
+        <MappingFragment StoreEntitySet="avashortcases">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="casetitle" ColumnName="casetitle" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="industry" ColumnName="industry" />
+          <ScalarProperty Name="casecode" ColumnName="casecode" />
+          <ScalarProperty Name="caseteach" ColumnName="caseteach" />
+          <ScalarProperty Name="pricers" ColumnName="pricers" />
+          <ScalarProperty Name="pricedollar" ColumnName="pricedollar" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="ordno" ColumnName="ordno" />
+          <ScalarProperty Name="new" ColumnName="new" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="pindustry" ColumnName="pindustry" />
+          <ScalarProperty Name="secindustry" ColumnName="secindustry" />
+          <ScalarProperty Name="subindustry" ColumnName="subindustry" />
+          <ScalarProperty Name="AVashortcases_keywords" ColumnName="AVashortcases.keywords" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="centername" ColumnName="centername" />
+          <ScalarProperty Name="SecondaryArea1" ColumnName="SecondaryArea1" />
+          <ScalarProperty Name="SecondaryArea2" ColumnName="SecondaryArea2" />
+          <ScalarProperty Name="SecondaryArea3" ColumnName="SecondaryArea3" />
+          <ScalarProperty Name="SecondaryArea4" ColumnName="SecondaryArea4" />
+          <ScalarProperty Name="SecondaryArea5" ColumnName="SecondaryArea5" />
+          <ScalarProperty Name="SecondaryArea6" ColumnName="SecondaryArea6" />
+          <ScalarProperty Name="Market" ColumnName="Market" />
+          <ScalarProperty Name="Discipline" ColumnName="Discipline" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="AddToCart" ColumnName="AddToCart" />
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CaseLength" ColumnName="CaseLength" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="PubDate" ColumnName="PubDate" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Themes" ColumnName="Themes" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ICMREvents">
+      <EntityTypeMapping TypeName="ICMRModel.ICMREvent">
+        <MappingFragment StoreEntitySet="ICMREvents">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="EventUrl" ColumnName="EventUrl" />
+          <ScalarProperty Name="Pdf" ColumnName="Pdf" />
+          <ScalarProperty Name="AltTagDescription" ColumnName="AltTagDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ICMRFaculties">
+      <EntityTypeMapping TypeName="ICMRModel.ICMRFaculty">
+        <MappingFragment StoreEntitySet="ICMRFaculty">
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="FacultyImage" ColumnName="FacultyImage" />
+          <ScalarProperty Name="FacultyName" ColumnName="FacultyName" />
+          <ScalarProperty Name="FacultyDesignation" ColumnName="FacultyDesignation" />
+          <ScalarProperty Name="FacultyQualification" ColumnName="FacultyQualification" />
+          <ScalarProperty Name="FacultyExperience" ColumnName="FacultyExperience" />
+          <ScalarProperty Name="FacultyResume" ColumnName="FacultyResume" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ICMRLogins">
+      <EntityTypeMapping TypeName="ICMRModel.ICMRLogin">
+        <MappingFragment StoreEntitySet="ICMRLogin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_icmr">
+      <EntityTypeMapping TypeName="ICMRModel.Master_icmr">
+        <MappingFragment StoreEntitySet="Master_icmr">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="prefix" ColumnName="prefix" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="add1" ColumnName="add1" />
+          <ScalarProperty Name="add2" ColumnName="add2" />
+          <ScalarProperty Name="add3" ColumnName="add3" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="member_qual" ColumnName="member_qual" />
+          <ScalarProperty Name="member_compname" ColumnName="member_compname" />
+          <ScalarProperty Name="member_desig" ColumnName="member_desig" />
+          <ScalarProperty Name="tel_res" ColumnName="tel_res" />
+          <ScalarProperty Name="tel_off" ColumnName="tel_off" />
+          <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="dcname" ColumnName="dcname" />
+          <ScalarProperty Name="dophone" ColumnName="dophone" />
+          <ScalarProperty Name="mode" ColumnName="mode" />
+          <ScalarProperty Name="EmailAlert" ColumnName="EmailAlert" />
+          <ScalarProperty Name="Exdate" ColumnName="Exdate" />
+          <ScalarProperty Name="OrgGST" ColumnName="OrgGST" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proccases">
+      <EntityTypeMapping TypeName="ICMRModel.proccas">
+        <MappingFragment StoreEntitySet="proccases">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="casetitle" ColumnName="casetitle" />
+          <ScalarProperty Name="noc" ColumnName="noc" />
+          <ScalarProperty Name="notn" ColumnName="notn" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="TransactionAmount" ColumnName="TransactionAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCaseDetails">
+      <EntityTypeMapping TypeName="ICMRModel.tblCaseDetail">
+        <MappingFragment StoreEntitySet="tblCaseDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblChapters">
+      <EntityTypeMapping TypeName="ICMRModel.tblChapter">
+        <MappingFragment StoreEntitySet="tblChapters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TextBookId" ColumnName="TextBookId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ChapterNo" ColumnName="ChapterNo" />
+          <ScalarProperty Name="ChapterTitle" ColumnName="ChapterTitle" />
+          <ScalarProperty Name="Pages" ColumnName="Pages" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEbookCases">
+      <EntityTypeMapping TypeName="ICMRModel.tblEbookCas">
+        <MappingFragment StoreEntitySet="tblEbookCases">
+          <ScalarProperty Name="casecode" ColumnName="casecode" />
+          <ScalarProperty Name="caseId" ColumnName="caseId" />
+          <ScalarProperty Name="ebookId" ColumnName="ebookId" />
+          <ScalarProperty Name="caseTitle" ColumnName="caseTitle" />
+          <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="subjectCategory" ColumnName="subjectCategory" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEbooks">
+      <EntityTypeMapping TypeName="ICMRModel.tblEbook">
+        <MappingFragment StoreEntitySet="tblEbooks">
+          <ScalarProperty Name="ebookId" ColumnName="ebookId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="createdOn" ColumnName="createdOn" />
+          <ScalarProperty Name="ipadress" ColumnName="ipadress" />
+          <ScalarProperty Name="pages" ColumnName="pages" />
+          <ScalarProperty Name="prise" ColumnName="prise" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="coverImg" ColumnName="coverImg" />
+          <ScalarProperty Name="ebookPdf" ColumnName="ebookPdf" />
+          <ScalarProperty Name="LocalIpAddress" ColumnName="LocalIpAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTextBookImgs">
+      <EntityTypeMapping TypeName="ICMRModel.tblTextBookImg">
+        <MappingFragment StoreEntitySet="tblTextBookImgs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TextBookId" ColumnName="TextBookId" />
+          <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTextBooks">
+      <EntityTypeMapping TypeName="ICMRModel.tblTextBook">
+        <MappingFragment StoreEntitySet="tblTextBooks">
+          <ScalarProperty Name="TextBookId" ColumnName="TextBookId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LocalIpAddress" ColumnName="LocalIpAddress" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="TextBookPages" ColumnName="TextBookPages" />
+          <ScalarProperty Name="WorkBookPages" ColumnName="WorkBookPages" />
+          <ScalarProperty Name="TextBookprise" ColumnName="TextBookprise" />
+          <ScalarProperty Name="WorkBookprise" ColumnName="WorkBookprise" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="TextBookPdf" ColumnName="TextBookPdf" />
+          <ScalarProperty Name="Overview" ColumnName="Overview" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCaseStudies">
+      <EntityTypeMapping TypeName="ICMRModel.tblCaseStudy">
+        <MappingFragment StoreEntitySet="tblCaseStudy">
+          <ScalarProperty Name="Casecode" ColumnName="Casecode" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SubjectCategory" ColumnName="SubjectCategory" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CaseTitle" ColumnName="CaseTitle" />
+          <ScalarProperty Name="CaseTudyVolumeId" ColumnName="CaseTudyVolumeId" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCaseStudyVolumes">
+      <EntityTypeMapping TypeName="ICMRModel.tblCaseStudyVolume">
+        <MappingFragment StoreEntitySet="tblCaseStudyVolume">
+          <ScalarProperty Name="LocalIpAddress" ColumnName="LocalIpAddress" />
+          <ScalarProperty Name="CasePdf" ColumnName="CasePdf" />
+          <ScalarProperty Name="CoverImg" ColumnName="CoverImg" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Pages" ColumnName="Pages" />
+          <ScalarProperty Name="IpAdress" ColumnName="IpAdress" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CaseTudyVolumeId" ColumnName="CaseTudyVolumeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

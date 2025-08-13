@@ -1,0 +1,561 @@
+﻿@{
+    Layout = null;
+    Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1));
+    Response.Cache.SetValidUntilExpires(false);
+    Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    Response.Cache.SetNoStore();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+        <link rel="stylesheet" href="~/Content/site.css" />
+
+        @RenderSection("Styles", required: false) <!-- Add this line -->
+    
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    <meta name="description" content="@ViewBag.MetaDescription" />
+    <meta name="keywords" content="@ViewBag.MetaKeywords" />
+
+
+    <link rel="canonical" href="https://icmrindia.org/>@ViewBag.Url">
+    <meta property="og:title" content="@ViewBag.Title">
+    <meta property="og:site_name" content="IFHE Hyderabad">
+    <meta property="og:url" content="https://icmrindia.org/@ViewBag.url" />
+    <meta property="og:description"
+          content="@ViewBag.MetaDescription" />
+    <meta property="og:image" content="/favicon/favicon-300x300.png" />
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@ViewBag.Title">
+    <meta name="twitter:description"
+          content="@ViewBag.MetaDescription">
+    <meta name="twitter:image" content="/favicon/favicon-300x300.png">
+
+
+
+    <meta name="robots" content="all" />
+    <meta name="robots" content="index, all, follow" />
+    <meta name="author" content="ICMR (IBS Center for Management Research)">
+    <link rel="manifest" href="~/manifest.json">
+    <link rel="icon" href="~/favicon.ico" />
+    <!-- Favicons-->
+
+    <link rel="shortcut icon" type="image/png" href="~/Favicons/favicon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Favicons/favicon-16x16.png">
+    <meta name="theme-color" content="#e31e34">
+
+
+    @Styles.Render("~/assets/css")
+
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+
+    @*<style>
+            .navbarContent {
+                display: flex;
+                align-items: center;
+
+                position: relative;
+            }
+
+            .search-container {
+                flex-grow: 1;
+                position: relative;
+            }
+
+            .search-input {
+               /* display: none;*/
+                width: 100%;
+                padding: 8px;
+                font-size: 16px;
+            }
+
+            .search-active {
+                display: block;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                border: none;
+                outline: none;
+            }
+            .search-container{
+
+            }
+        </style>*@
+</head>
+<body>
+    <header class="  mainBlueColor text-white sticky-top shadow-sm">
+        <div class="container-fluid">
+
+            <div class="row customRow">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="navbar navbar-expand-xl p-0 " data-bs-theme="dark">
+                        <a class="navbar-brand p-0" href="~/">
+                            <img src="~/assets/img/ICMR-White.svg" alt="ICMR (IBS Center for Management Research), IFHE Hyderabad">
+                        </a>
+                        <button class="navbar-toggler mobile-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                                aria-controls="navbarNav"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            @*<img class="w-6 h-6" src="/static_files/svgs/bars.svg" alt="bars" />*@
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse  navbar-collapse clip-custom justify-content-center " id="navbarNav">
+                            <div class="d-xl-flex d-lg-flex d-block">
+                                <ul class="navbar-nav mx-auto justify-content-xl-center justify-content-lg-center justify-content-start">
+
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/about-ibs-case-research-center">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/event">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/media">Media</a>
+                                    </li>
+                                    @*<li class="nav-item">
+                                            <a class="nav-link p-1 text-white" href="/sitemap">Sitemap</a>
+                                        </li>*@
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/careers">Careers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/awards-and-recognitions">Awards</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/publications">Publications</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link p-1 text-white" href="~/contact-us">Contact</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <span class="p-0 px-2">
+                                            <a class="btn btn-sm btn-warning me-2" href="~/User/UserLogin">Login</a>
+
+                                            <span>|</span>
+                                            <a class="btn btn-sm btn-warning me-2" href="~/Registration">Register</a>
+                                        </span>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <div class="blueColor py-xl-2">
+                                <div class="navbarContent navbar-nav py-xl-0">
+                                    <div class="nav-item" data-menu="submenu1">
+                                        <span class="nav-link p-1">
+                                            <a class="" href="~/icmr-case-studies">Case Collection</a>
+                                        </span>
+                                    </div>
+                                    <div class="nav-item" data-menu="submenu2">
+                                        <span class="nav-link p-1">Subject Category <i class="bi bi-caret-down-fill"></i></span>
+                                        <div class="submenu" id="submenu2">
+
+                                            <ul class="d-md-flex list-unstyled gap-1">
+                                                <li>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Strategy" })">Business Strategy</a>
+                                                        </li>
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Marketing" })">Marketing</a>
+                                                        </li>
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Finance" })">Finance</a>
+                                                        </li>
+
+
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Human Resource Management" })">Human Resource Management</a>
+                                                        </li>
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "IT and Systems" })">IT and Systems</a>
+                                                        </li>
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Operations" })">Operations</a>
+                                                        </li>
+
+                                                        @*<li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Project Management" })">Project Management</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Corporate Governance" })">Corporate Governance</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Women Empowerment" })">Women Empowerment</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "CSR and Sustainability" })">CSR and Sustainability</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Law" })">Law</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Environment" })">Business Environment</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Enterprise Risk Management" })">Enterprise Risk Management</a>
+                                                            </li>*@
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Economics" })">Economics</a>
+                                                        </li>
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Leadership and Entrepreneurship" })">Leadership and Entrepreneurship</a>
+                                                        </li>
+                                                        <li class="liItem">
+                                                            <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Ethics" })">Business Ethics</a>
+                                                        </li>
+                                                        @*<li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Insurance" })">Insurance</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Innovation" })">Innovation</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Miscellaneous" })">Miscellaneous</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Business Reports" })">Business Reports</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Multimedia Case Studies" })">Multimedia Case Studies</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Cases in Other Languages" })">Cases in Other Languages</a>
+                                                            </li>
+                                                            <li class="liItem">
+                                                                <a href="@Url.Action("CaseStudies", "Home", new { category = "Simplified Case Studies" })">Simplified Case Studies</a>
+                                                            </li>*@
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="nav-item" data-menu="submenu3">
+                                        <span class="nav-link p-1">Other Products  <i class="bi bi-caret-down-fill"></i></span>
+                                        <div class="submenu" id="submenu3">
+                                            <ul class="d-md-flex list-unstyled gap-1">
+                                                <li>
+                                                    <span class="text-secondary"> Case Studies Pack</span>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a rel="noreferrer" href="~/other-products/case-studies-pack/aviation">Aviation</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/other-products/case-studies-pack/banking-and-financial-services">Banking and Financial Services</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/other-products/case-studies-pack/electricals-and-electronics">Electricals and Electronics</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/other-products/case-studies-pack/media-entertainment">Media & Entertaintment</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/other-products/case-studies-pack/retailing">Retailing</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/other-products/case-studies-pack/telecom">Telecom</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <span class="text-secondary"> E-Books</span>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a rel="noreferrer" href="/Home/ByCategory?category=Functional Areas">Functional Areas</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="/Home/ByCategory?category=Industries">Industries</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="/Home/ByCategory?category=Management Lessions">Management Lessions</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="/Home/ByCategory?category=Multinational Companies">Multinational Companies</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <span class="text-secondary">Coursewares</span>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a rel="noreferrer" href="/Home/ByTextCategory">Textbooks/Workbooks</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="/Home/ByCategory?category=Case Study Volumes">Case Study Volumes</a></li>
+                                                        <li class="liItem"><a class="text-secondary" rel="noreferrer" href="#">Free Case Studies</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="nav-item" data-menu="submenu4">
+                                        <span class="nav-link p-1">Services  <i class="bi bi-caret-down-fill"></i></span>
+                                        <div class="submenu" id="submenu4">
+                                            <ul class="d-md-flex list-unstyled gap-1">
+                                                <li>
+                                                    <span class="text-secondary"> Licensing  </span>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a rel="noreferrer" href="~/services/licensing/case-subscription">Case Subscription</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/icmr-case-pricing">Annual Licensing for B-schools</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/icmr-case-pricing">Annual Licensing for Corporates</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a class=" " href="~/reprint-permission">Reprint Permission</a></li>
+                                                        <li class="liItem"><a class=" " href="~/services/case-mapping-to-curriculum">Case Mapping to Curriculum</a></li>
+                                                        <li class="liItem"><a class=" " href="~/services/mdp-fdp">MDPs/FDPs</a></li>
+                                                        <li class="liItem"><a class=" " href="~/case-writing-workshops">Case Writing Workshops</a></li>
+                                                        <li class="liItem"><a class=" " href="~/customized-case-studies">Customized Cases</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item" data-menu="submenu5">
+                                        <span class="nav-link p-1">   Case Resources  <i class="bi bi-caret-down-fill"></i></span>
+                                        <div class="submenu" id="submenu5">
+                                            <ul class="d-md-flex list-unstyled gap-1">
+                                                <li>
+                                                    <span class="text-secondary">Video</span>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a href="#">SDG Seminar cum Workshop</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="#">3-day-workshop-2023</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="#">Guest Speak</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="~/case-resources/video/alumni-speak">Alumni Speak</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem mt-lg-4"><a rel="noreferrer" href="#">Faculty Speak</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="#">Student Speak</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="#">Case Research Center</a></li>
+
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                            <hr class="d-none d-md-block" />
+                                            <ul class="d-md-flex list-unstyled gap-1">
+                                                <li>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem "><a class="" target="_blank" href="https://icmrindia.org/blogs/">Blog</a></li>
+                                                        <li class="liItem"><a class=" " href="~/case-resources/interview">Interview</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span class="text-secondary text-nowrap"> 4th ICSC Conference </span>
+                                                    <ul class="list-unstyled p-0">
+                                                        <li class="liItem"><a rel="noreferrer" href="#">Day-1</a></li>
+                                                        <li class="liItem"><a rel="noreferrer" href="#">Day-2</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="nav-item" data-menu="submenu6">
+                                        <span class="nav-link p-1">E-newsletter   <i class="bi bi-caret-down-fill"></i></span>
+                                        <ul class="submenu" id="submenu6">
+                                            <li class="liItem"><a class=" " href="~/just-in-case">Just In Case</a></li>
+                                            <li class="liItem"><a class=" " target="_blank" href="https://icmrindia.org/just-in-case/Newsletter_14/index.html">DEC 2024</a></li>
+                                            <li class="liItem"><a href="#window" class="" title="Subscription" onclick="window.open('https://icmrindia.org/icmr-subscribe.htm', null,'height=550,width=600,status=NO,' +'toolbar=no,menubar=no,location=no,scroll=yes')">Subscribe</a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="nav-item">
+                                        <span class="nav-link p-1">
+                                            <a href="~/search">
+                                                <i class="bi bi-search fs-4"></i>
+                                            </a>
+                                        </span>
+
+                                    </div>
+                                    @*<div class="search-container">
+                                            <span class="nav-item text-black" id="search-trigger">Search</span>
+                                            <input type="text" id="search-input" class="search-input">
+                                        </div>*@
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="d-none d-xl-flex flex-xl-column  align-items-start">
+                            <div class="font-14">
+                                <a href="tel:9640901313">
+                                    <i class="bi bi-telephone-fill text-white"></i>
+                                    <span class="fw-bold text-white ">+91- 9640901313</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="text-white font-14" target="_blank" href="mailto:casehelpdesk@ibsindia.org">
+                                    <i class="bi bi-envelope me-2"></i>
+                                    <span class=" ">casehelpdesk@ibsindia.org</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="Lefgtsticky-container d-inline-block shadow">
+        <ul class="left-Sticky">
+            <li>
+                <a title="cart" href="~/add-to-cart/cart-details">
+                    <i class="bi bi-cart fs-4"></i>
+                    <span id="cartCount" class="badge bg-danger">0</span>
+
+
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <script>
+        const navItems = document.querySelectorAll(".nav-item");
+
+        navItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent click event from reaching document
+
+                const submenuId = item.getAttribute("data-menu");
+                const submenu = document.getElementById(submenuId);
+                const icon = item.querySelector(".bi-caret-down-fill"); // Get the specific icon inside the clicked item
+
+                // Close all other submenus and reset other icons
+                document.querySelectorAll(".submenu").forEach((menu) => {
+                    if (menu !== submenu) {
+                        menu.style.display = "none";
+                    }
+                });
+
+                document.querySelectorAll(".bi-caret-down-fill").forEach((otherIcon) => {
+                    if (otherIcon !== icon) {
+                        otherIcon.classList.remove("rotated");
+                    }
+                });
+
+                // Toggle the clicked submenu
+                submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+
+                // Toggle rotation for the specific icon
+                icon.classList.toggle("rotated");
+            });
+        });
+
+        // Close all submenus and reset icons when clicking outside
+        document.addEventListener("click", () => {
+            document.querySelectorAll(".submenu").forEach((menu) => {
+                menu.style.display = "none";
+            });
+
+            document.querySelectorAll(".bi-caret-down-fill").forEach((icon) => {
+                icon.classList.remove("rotated");
+            });
+        });</script>
+
+    @Html.Partial("_Footer")
+    <div class="d-flex justify-content-center align-items-center">
+        <a href="#Top" class="back-to-top d-flex align-items-center justify-content-center active text-white">Move to top <i class="bi bi-arrow-up-short"></i></a>
+    </div>
+
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/aos/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        function updateCartCount() {
+            $.ajax({
+                url: '@Url.Action("GetCartCount", "Home")',
+                type: 'GET',
+                success: function (data) {
+                    if (data > 0) {
+                        $("#cartCount").text(data);
+                    } else {
+                        $("#cartCount").text('0');
+                    }
+                }
+            });
+        }
+
+        updateCartCount();  // Call on page load
+
+        // Optional: Refresh count after adding/removing items
+        $(document).on('click', '.btn-danger, .btn-success', function () {
+            setTimeout(updateCartCount, 500);
+        });
+    });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // Check if the current URL contains "/business-environment"
+        if (window.location.pathname.includes("/CaseStudies")) {
+            $(".category-filter").click(function (e) {
+                e.preventDefault();
+                var category = $(this).data("category");
+
+               $.ajax({
+    url: '@Url.Action("GetCartCount", "Home")',
+    type: 'GET',
+    cache: false,  // <-- Add this line
+    success: function (data) {
+        $("#cartCount").text(data || '0');
+    }
+});
+
+            });
+        }
+    });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".category-link").click(function (e) {
+                e.preventDefault();
+
+                var category = $(this).data("category");
+                var url = "/CaseStudies/" + encodeURIComponent(category);
+
+                // Update the URL and reload the page
+                window.location.href = url;
+            });
+        });
+
+    </script>
+
+    @Scripts.Render("~/assets/js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

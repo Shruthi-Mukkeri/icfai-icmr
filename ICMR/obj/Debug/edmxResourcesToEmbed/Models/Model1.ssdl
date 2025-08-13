@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICMRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AvaCases">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="casetitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="area" Type="nvarchar" MaxLength="500" />
+    <Property Name="company" Type="nvarchar" MaxLength="1000" />
+    <Property Name="industry" Type="nvarchar" MaxLength="255" />
+    <Property Name="casecode" Type="nvarchar" MaxLength="255" />
+    <Property Name="caseteach" Type="nvarchar" MaxLength="255" />
+    <Property Name="pricers" Type="float" />
+    <Property Name="pricedollar" Type="float" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="ordno" Type="float" />
+    <Property Name="new" Type="nvarchar" MaxLength="255" />
+    <Property Name="sdate" Type="smalldatetime" />
+    <Property Name="pindustry" Type="varchar" MaxLength="300" />
+    <Property Name="secindustry" Type="varchar" MaxLength="300" />
+    <Property Name="subindustry" Type="varchar" MaxLength="300" />
+    <Property Name="AVacases.keywords" Type="ntext" />
+    <Property Name="region" Type="varchar" MaxLength="300" />
+    <Property Name="author" Type="varchar" MaxLength="300" />
+    <Property Name="centername" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea1" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea2" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea3" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea4" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea5" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea6" Type="nvarchar" MaxLength="500" />
+    <Property Name="Market" Type="varchar" MaxLength="300" />
+    <Property Name="Discipline" Type="varchar" MaxLength="300" />
+    <Property Name="keywords" Type="ntext" />
+    <Property Name="country" Type="varchar" MaxLength="150" />
+    <Property Name="p area" Type="varchar" MaxLength="150" />
+    <Property Name="AddToCart" Type="bit" />
+    <Property Name="PDF" Type="varchar" MaxLength="500" />
+    <Property Name="Description" Type="varchar" MaxLength="3500" />
+    <Property Name="CaseLength" Type="varchar" MaxLength="50" />
+    <Property Name="Period" Type="varchar" MaxLength="30" />
+    <Property Name="PubDate" Type="datetime" />
+    <Property Name="Organization" Type="varchar" MaxLength="150" />
+    <Property Name="Themes" Type="varchar" MaxLength="1000" />
+    <Property Name="CaseType" Type="varchar" MaxLength="100" />
+    <Property Name="UploadedBy" Type="varchar" MaxLength="150" />
+    <Property Name="UploadedRole" Type="varchar" MaxLength="150" />
+    <Property Name="UploadedId" Type="varchar" MaxLength="150" />
+    <Property Name="LocalIpAddress" Type="varchar" MaxLength="150" />
+    <Property Name="PublicIpAddress" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="avashortcases">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="casetitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="area" Type="nvarchar" MaxLength="255" />
+    <Property Name="company" Type="nvarchar" MaxLength="255" />
+    <Property Name="industry" Type="nvarchar" MaxLength="255" />
+    <Property Name="casecode" Type="nvarchar" MaxLength="255" />
+    <Property Name="caseteach" Type="nvarchar" MaxLength="255" />
+    <Property Name="pricers" Type="float" />
+    <Property Name="pricedollar" Type="float" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="ordno" Type="nvarchar" MaxLength="255" />
+    <Property Name="new" Type="nvarchar" MaxLength="255" />
+    <Property Name="sdate" Type="smalldatetime" />
+    <Property Name="pindustry" Type="varchar" MaxLength="300" />
+    <Property Name="secindustry" Type="varchar" MaxLength="300" />
+    <Property Name="subindustry" Type="varchar" MaxLength="300" />
+    <Property Name="AVashortcases.keywords" Type="ntext" />
+    <Property Name="region" Type="varchar" MaxLength="300" />
+    <Property Name="author" Type="varchar" MaxLength="300" />
+    <Property Name="centername" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea1" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea2" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea3" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea4" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea5" Type="varchar" MaxLength="300" />
+    <Property Name="SecondaryArea6" Type="varchar" MaxLength="300" />
+    <Property Name="Market" Type="varchar" MaxLength="300" />
+    <Property Name="Discipline" Type="varchar" MaxLength="300" />
+    <Property Name="keywords" Type="ntext" />
+    <Property Name="AddToCart" Type="bit" />
+    <Property Name="PDF" Type="varchar" MaxLength="750" />
+    <Property Name="Description" Type="varchar" MaxLength="3500" />
+    <Property Name="CaseLength" Type="varchar" MaxLength="50" />
+    <Property Name="Period" Type="varchar" MaxLength="30" />
+    <Property Name="PubDate" Type="datetime" />
+    <Property Name="Organization" Type="varchar" MaxLength="150" />
+    <Property Name="Themes" Type="varchar" MaxLength="1000" />
+    <Property Name="country" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ICMREvents">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="150" />
+    <Property Name="Title" Type="varchar" MaxLength="350" />
+    <Property Name="EventDescription" Type="varchar" MaxLength="450" />
+    <Property Name="EventDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Image" Type="varchar" MaxLength="500" />
+    <Property Name="EventUrl" Type="varchar" MaxLength="250" />
+    <Property Name="Pdf" Type="varchar" MaxLength="500" />
+    <Property Name="AltTagDescription" Type="varchar" MaxLength="450" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="ICMRFaculty">
+    <Key>
+      <PropertyRef Name="FacultyId" />
+    </Key>
+    <Property Name="FacultyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacultyImage" Type="varchar" MaxLength="500" />
+    <Property Name="FacultyName" Type="varchar" MaxLength="100" />
+    <Property Name="FacultyDesignation" Type="varchar" MaxLength="100" />
+    <Property Name="FacultyQualification" Type="varchar" MaxLength="100" />
+    <Property Name="FacultyExperience" Type="varchar" MaxLength="100" />
+    <Property Name="FacultyResume" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Details" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ICMRLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="13" />
+    <Property Name="Role" Type="varchar" MaxLength="100" />
+    <Property Name="EmpId" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Master_icmr">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prefix" Type="varchar" MaxLength="50" />
+    <Property Name="first_name" Type="varchar" MaxLength="100" />
+    <Property Name="last_name" Type="varchar" MaxLength="100" />
+    <Property Name="add1" Type="varchar" MaxLength="200" />
+    <Property Name="add2" Type="varchar" MaxLength="200" />
+    <Property Name="add3" Type="varchar" MaxLength="200" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="PIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="150" />
+    <Property Name="member_qual" Type="varchar" MaxLength="50" />
+    <Property Name="member_compname" Type="varchar" MaxLength="100" />
+    <Property Name="member_desig" Type="varchar" MaxLength="100" />
+    <Property Name="tel_res" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel_off" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile_phone" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fax" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="sdate" Type="datetime" />
+    <Property Name="dcname" Type="nvarchar" MaxLength="100" />
+    <Property Name="dophone" Type="nvarchar" MaxLength="50" />
+    <Property Name="mode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAlert" Type="nvarchar" MaxLength="20" />
+    <Property Name="Exdate" Type="datetime" />
+    <Property Name="OrgGST" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="proccases">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="50" />
+    <Property Name="casetitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="noc" Type="nvarchar" MaxLength="50" />
+    <Property Name="notn" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalAmount" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionStatus" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionNo" Type="varchar" MaxLength="50" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="TransactionAmount" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblCaseDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaseId" Type="int" Nullable="false" />
+    <Property Name="Introduction" Type="varchar(max)" />
+    <Property Name="Content" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblCaseStudy">
+    <Key>
+      <PropertyRef Name="CaseId" />
+    </Key>
+    <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaseTudyVolumeId" Type="int" Nullable="false" />
+    <Property Name="CaseTitle" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UserId" Type="varchar" MaxLength="30" />
+    <Property Name="SubjectCategory" Type="nvarchar" MaxLength="100" />
+    <Property Name="Category" Type="nvarchar" MaxLength="100" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="Casecode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCaseStudyVolume">
+    <Key>
+      <PropertyRef Name="CaseTudyVolumeId" />
+    </Key>
+    <Property Name="CaseTudyVolumeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Volume" Type="nvarchar" MaxLength="100" />
+    <Property Name="Category" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserId" Type="varchar" MaxLength="30" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IpAdress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pages" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Month" Type="int" />
+    <Property Name="CoverImg" Type="nvarchar" MaxLength="255" />
+    <Property Name="CasePdf" Type="nvarchar" MaxLength="255" />
+    <Property Name="LocalIpAddress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblChapters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TextBookId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="ChapterNo" Type="int" />
+    <Property Name="ChapterTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pages" Type="int" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblEbookCases">
+    <Key>
+      <PropertyRef Name="caseId" />
+    </Key>
+    <Property Name="caseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ebookId" Type="int" Nullable="false" />
+    <Property Name="caseTitle" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="createdOn" Type="datetime" />
+    <Property Name="userid" Type="varchar" MaxLength="30" />
+    <Property Name="subjectCategory" Type="nvarchar" MaxLength="100" />
+    <Property Name="category" Type="nvarchar" MaxLength="100" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="casecode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblEbooks">
+    <Key>
+      <PropertyRef Name="ebookId" />
+    </Key>
+    <Property Name="ebookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="volume" Type="nvarchar" MaxLength="100" />
+    <Property Name="category" Type="nvarchar" MaxLength="100" />
+    <Property Name="userid" Type="varchar" MaxLength="30" />
+    <Property Name="createdOn" Type="datetime" />
+    <Property Name="ipadress" Type="nvarchar" MaxLength="50" />
+    <Property Name="pages" Type="int" />
+    <Property Name="prise" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="year" Type="int" />
+    <Property Name="month" Type="int" />
+    <Property Name="coverImg" Type="nvarchar" MaxLength="255" />
+    <Property Name="ebookPdf" Type="nvarchar" MaxLength="255" />
+    <Property Name="LocalIpAddress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblTextBookImgs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TextBookId" Type="int" Nullable="false" />
+    <Property Name="CoverImage" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tblTextBooks">
+    <Key>
+      <PropertyRef Name="TextBookId" />
+    </Key>
+    <Property Name="TextBookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Volume" Type="nvarchar" MaxLength="100" />
+    <Property Name="Category" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserId" Type="varchar" MaxLength="30" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="LocalIpAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="TextBookPages" Type="int" />
+    <Property Name="WorkBookPages" Type="int" />
+    <Property Name="TextBookprise" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WorkBookprise" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Month" Type="int" />
+    <Property Name="TextBookPdf" Type="nvarchar" MaxLength="255" />
+    <Property Name="Overview" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__tblCaseDe__CaseI__02FC7413">
+    <End Role="AvaCases" Type="Self.AvaCases" Multiplicity="1" />
+    <End Role="tblCaseDetails" Type="Self.tblCaseDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AvaCases">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCaseDetails">
+        <PropertyRef Name="CaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaseStudy_tblCaseStudyVolume">
+    <End Role="tblCaseStudyVolume" Type="Self.tblCaseStudyVolume" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblCaseStudy" Type="Self.tblCaseStudy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCaseStudyVolume">
+        <PropertyRef Name="CaseTudyVolumeId" />
+      </Principal>
+      <Dependent Role="tblCaseStudy">
+        <PropertyRef Name="CaseTudyVolumeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblChapters_tblTextBooks">
+    <End Role="tblTextBooks" Type="Self.tblTextBooks" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblChapters" Type="Self.tblChapters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTextBooks">
+        <PropertyRef Name="TextBookId" />
+      </Principal>
+      <Dependent Role="tblChapters">
+        <PropertyRef Name="TextBookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEbookCases_tblEbooks">
+    <End Role="tblEbooks" Type="Self.tblEbooks" Multiplicity="1" />
+    <End Role="tblEbookCases" Type="Self.tblEbookCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEbooks">
+        <PropertyRef Name="ebookId" />
+      </Principal>
+      <Dependent Role="tblEbookCases">
+        <PropertyRef Name="ebookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTextBookImgs_tblTextBooks">
+    <End Role="tblTextBooks" Type="Self.tblTextBooks" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblTextBookImgs" Type="Self.tblTextBookImgs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTextBooks">
+        <PropertyRef Name="TextBookId" />
+      </Principal>
+      <Dependent Role="tblTextBookImgs">
+        <PropertyRef Name="TextBookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ICMRModelStoreContainer">
+    <EntitySet Name="AvaCases" EntityType="Self.AvaCases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="avashortcases" EntityType="Self.avashortcases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ICMREvents" EntityType="Self.ICMREvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ICMRFaculty" EntityType="Self.ICMRFaculty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ICMRLogin" EntityType="Self.ICMRLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_icmr" EntityType="Self.Master_icmr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proccases" EntityType="Self.proccases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCaseDetails" EntityType="Self.tblCaseDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCaseStudy" EntityType="Self.tblCaseStudy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCaseStudyVolume" EntityType="Self.tblCaseStudyVolume" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblChapters" EntityType="Self.tblChapters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEbookCases" EntityType="Self.tblEbookCases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEbooks" EntityType="Self.tblEbooks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTextBookImgs" EntityType="Self.tblTextBookImgs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTextBooks" EntityType="Self.tblTextBooks" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblCaseDe__CaseI__02FC7413" Association="Self.FK__tblCaseDe__CaseI__02FC7413">
+      <End Role="AvaCases" EntitySet="AvaCases" />
+      <End Role="tblCaseDetails" EntitySet="tblCaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaseStudy_tblCaseStudyVolume" Association="Self.FK_tblCaseStudy_tblCaseStudyVolume">
+      <End Role="tblCaseStudyVolume" EntitySet="tblCaseStudyVolume" />
+      <End Role="tblCaseStudy" EntitySet="tblCaseStudy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblChapters_tblTextBooks" Association="Self.FK_tblChapters_tblTextBooks">
+      <End Role="tblTextBooks" EntitySet="tblTextBooks" />
+      <End Role="tblChapters" EntitySet="tblChapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEbookCases_tblEbooks" Association="Self.FK_tblEbookCases_tblEbooks">
+      <End Role="tblEbooks" EntitySet="tblEbooks" />
+      <End Role="tblEbookCases" EntitySet="tblEbookCases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTextBookImgs_tblTextBooks" Association="Self.FK_tblTextBookImgs_tblTextBooks">
+      <End Role="tblTextBooks" EntitySet="tblTextBooks" />
+      <End Role="tblTextBookImgs" EntitySet="tblTextBookImgs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,90 @@
+﻿@model List<ICMR.Models.CartItem>
+
+@{
+    ViewBag.Title = "Display Item Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var groupedData = Model.GroupBy(x => new { x.userid, x.first_name, x.email });
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-danger">🛒 Item Purchase Details</h2>
+
+    @*@using (Html.BeginForm("DisplayItems", "Admin", FormMethod.Get))
+    {
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="month" class="form-label">📅 Filter by Month:</label>
+                <select name="month" id="month" class="form-select" onchange="this.form.submit()">
+                    <option value="">-- All Months --</option>
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        var monthName = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i);
+                        <option value="@i" @(Request.QueryString["month"] == i.ToString() ? "selected" : "")>@monthName</option>
+                    }
+                </select>
+            </div>
+        </div>
+    }*@
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="accordion" id="userAccordion">
+            @foreach (var group in groupedData)
+            {
+                var userId = group.Key.userid;
+                var collapseId = "collapse" + userId;
+
+            <div class="card mb-2 shadow-sm">
+                <div class="card-header bg-white text-black d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId" aria-expanded="false">
+                            👤 @group.Key.first_name @*(@group.Key.email)*@
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="@collapseId" class="collapse" data-bs-parent="#userAccordion">
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>📦 Item Name</th>
+                                    <th>📅 Register Date</th>
+                                    <th>📧 Email</th>
+                                    <th>📱 Mobile Number</th>
+                                    <th>📅 Transaction Date</th>
+                                    <th>💰 Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in group)
+                                {
+                                    <tr>
+                                        <td>@item.casetitle</td>
+                                        <td>@(item.sdate?.ToString("dd MMM yyyy") ?? "N/A")</td>
+                                        <td>@item.email</td>
+                                        <td>@item.mobile_phone</td>
+                                        <td>@(item.TransactionDate?.ToString("dd MMM yyyy") ?? "N/A")</td>
+                                        <td>@item.amount</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info mt-3">
+            No item details found.
+        </div>
+    }
+</div>
+
+<!-- Add in _Layout.cshtml or page head -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

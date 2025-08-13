@@ -1,0 +1,109 @@
+﻿@model ICMR.Models.Master_icmr
+
+@{
+    ViewBag.Title = "Edit Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="Common-Section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                <div class="breadcrumbs pb-0 aos-init aos-animate" data-aos="fade-up">
+                    <ol>
+                        <li><a href="~/User/UserHome">Home</a></li>
+                        <li>Update Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container mt-5">
+
+ 
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="  my-2">
+                <a href="@Url.Action("UserProfile", "User")" class="btn btn-danger">Back To Profile</a>
+            </div>
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h3 class="mb-0">Edit Profile</h3>
+                </div>
+
+
+                <div class="card-body p-4">
+                    <form method="post" action="@Url.Action("EditProfile", "User")">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="userid" value="@Model.userid" />
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">First Name</label>
+                                <input type="text" name="first_name" class="form-control" value="@Model.first_name" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" name="last_name" class="form-control" value="@Model.last_name" required />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" name="add1" class="form-control" value="@Model.add1" />
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">City</label>
+                                <input type="text" name="city" class="form-control" value="@Model.city" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">State</label>
+                                <input type="text" name="state" class="form-control" value="@Model.state" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">PIN</label>
+                                <input type="text" name="PIN" class="form-control" value="@Model.PIN" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Country</label>
+                                <input type="text" name="country" class="form-control" value="@Model.country" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Phone</label>
+                            <input type="tel" name="mobile_phone" class="form-control" value="@Model.mobile_phone" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" value="@Model.email" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Organization GST</label>
+                            <input type="text" name="OrgGST" class="form-control" value="@Model.OrgGST" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="text" name="Password" class="form-control" value="@Model.Password" />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

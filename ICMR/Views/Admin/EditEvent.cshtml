@@ -1,0 +1,85 @@
+﻿@model ICMR.Models.ICMREvent
+
+@{
+    ViewBag.Title = "Edit Event";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+<section>
+    <div class="container">
+
+        <div class="card border-0 shadow">
+            <div class="card-body">
+
+                <h3 class="mb-4">Edit Event</h3>
+                @using (Html.BeginForm("EditEvent", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(m => m.EventId)
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Title" })
+                                <label for="Title">Title</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                @Html.TextBoxFor(m => m.Type, new { @class = "form-control", placeholder = "Type" })
+                                <label for="Type">Type</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                @Html.TextAreaFor(m => m.EventDescription, new { @class = "form-control", placeholder = "Event Description" })
+                                <label for="EventDescription">Event Description</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                @Html.TextBoxFor(m => m.StartDate, new { type = "date", @class = "form-control", placeholder = "Start Date" })
+                                <label for="StartDate">Start Date</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                @Html.TextBoxFor(m => m.EndDate, new { type = "date", @class = "form-control", placeholder = "End Date" })
+                                <label for="EndDate">End Date</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Current Image:</label> 
+                            @if (!string.IsNullOrEmpty(Model.Image))
+                            {
+                                <a target="_blank" class="text-danger" href="~/Uploads/Images/@Model.Image">View Image</a>
+                                
+                            }
+                            <input type="file" name="ImageFile" class="form-control" accept="image/*"/>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Current PDF:</label> 
+                            @if (!string.IsNullOrEmpty(Model.Pdf))
+                            {
+                                <a class="text-danger" href="@Url.Content("~/Uploads/PDFs/" + Model.Pdf)" target="_blank">View PDF</a><br />
+                            }
+                            <input type="file" name="PdfFile" class="form-control" accept=".pdf,application/pdf"/>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-danger">Update</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+

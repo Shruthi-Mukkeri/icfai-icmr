@@ -1,0 +1,170 @@
+﻿@model ICMR.Models.TextBookCaseViewModel
+
+@section Styles {
+
+}
+<style>
+    .img-pic{
+        height:150px;
+        width:150px;
+    }
+</style>
+<div class="container py-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h2 class="text-primary mb-4">@Model.Title</h2>
+            
+            <div class="row">
+                <!-- Image Gallery -->
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <div class="card border-0 shadow ">
+                        <!-- Main Image -->
+                        <div class=" ">
+                            <img src="~/Uploads/Images/@(Model.CoverImages.FirstOrDefault()?.CoverImage)"
+                                 id="mainImg-@Model.TextBookId"
+                                 class="img-fluid  object-fit-contain img-pic " 
+                                 alt="Main Image" />
+                        </div>
+
+                        <!-- Thumbnails -->
+                        <div class="mt-3 d-flex justify-content-center gallery-thumbs flex-wrap gap-2">
+                            @for (int i = 0; i < Model.CoverImages.Count; i++)
+                            {
+                                var img = Model.CoverImages[i].CoverImage;
+                                <img src="~/Uploads/Images/@img"
+                                     class="img-selector rounded border thumb-img"
+                                     data-img="@img"
+                                     data-target="mainImg-@Model.TextBookId"
+                                     style="height: 60px; width: auto; cursor: pointer;"
+                                     alt="Thumbnail @(i + 1)" />
+                            }
+                        </div>
+                    </div>
+                  </div>
+
+                <div class="col-md-4">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-body">
+                            <h3>Details</h3>
+                            <div><strong>Volume Edition:</strong> @Model.Volume</div>
+                            
+                            <div class="col-sm-6">
+                                <strong>Textbook Pages:</strong> @Model.Pages
+                            </div>
+                            <div class="col-sm-6">
+                                <strong>Workbook Pages:</strong> @Model.WorkBookPages
+                            </div>
+                            <p>eBooks are provided in <strong>PDF</strong> locked file format.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-body">
+                            <h3>Pricing</h3>
+                            <div><strong>Prise:</strong> ₹@Model.TextBookprise</div>
+                            <div><strong>Prise:</strong> ₹@Model.WorkBookprise</div>
+
+                            <p>Please allow 3 working days to e-mail you the ebook.</p>
+
+                            <div class="mb-3">
+                                <h6 class="text-muted">Download</h6>
+                                @if (!string.IsNullOrEmpty(Model.TextBookPdf))
+                                {
+                                    <a class="btn btn-outline-primary" href="~/Uploads/PDFs/@Model.TextBookPdf" target="_blank">View Textbook PDF</a>
+                                }
+                                else
+                                {
+                                    <p class="text-danger">No textbook PDF available.</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Details -->
+                <div class="col-md-12 mt-3">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h2>@Model.Title : Overview</h2>
+                                <p>@Model.Overview</p>
+                            </div>
+
+                            
+
+                            @*<div class="price-box mb-3">
+                                <h6 class="text-muted">Pricing</h6>
+                                <p>
+                                    <strong>Textbook:</strong> ₹@Model.TextBookprise <br />
+                                    <strong>Workbook:</strong> ₹@Model.WorkBookprise
+                                </p>
+
+                                
+                            </div>*@
+
+                            
+
+                            <div class="mb-3">
+                                <h6 class="text-muted">Chapters</h6>
+
+                                <table class="table table-bordered table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width: 80px;">Chapter No</th>
+                                            <th>Chapter Title</th>
+                                            <th>Keywords</th>
+                                            <th>Pages</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model?.Chapters != null && Model.Chapters.Any())
+                                        {
+                                            foreach (var chap in Model.Chapters.OrderBy(c => c.ChapterNo))
+                                            {
+                                        <tr>
+                                            <td>@chap.ChapterNo</td>
+                                            <td>@chap.ChapterTitle</td>
+                                            <td>@chap.Keywords</td>
+                                            <td>@chap.Pages</td>
+
+                                        </tr>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <tr>
+                                                <td colspan="3" class="text-center text-muted">No chapters available</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                             
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@section Scripts {
+<script>
+        $(document).ready(function () {
+            $('.img-selector').on('click', function () {
+                var imgName = $(this).data('img');
+                var targetId = $(this).data('target');
+
+                $('#' + targetId).attr('src', '/Uploads/Images/' + imgName);
+
+                $('.img-selector').removeClass('active-thumb');
+                $(this).addClass('active-thumb');
+            });
+        });
+</script>
+}

@@ -1,0 +1,85 @@
+﻿@model List<ICMR.Models.tblTextBook>
+
+@{
+    ViewBag.Title = "DisplayTextBooks";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<section>
+    <div class="container">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <h2>Display Text Books</h2>
+
+                <!-- 🔍 Search Box -->
+                <div class="mb-3">
+                    <input type="text" id="searchInput" class="form-control w-25" placeholder="Search Text Books...">
+                </div>
+
+                <div class="table-responsive">
+                    <table id="ebookTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Volume</th>
+                                <th>Category</th>
+                                @*<th>Created On</th>*@
+                                <th>Text Book Pages</th>
+                                <th>Work Book Pages</th>
+
+                                <th>Text Book Price</th>
+                                <th>Work Book Price</th>
+
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Text Book PDF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var ebook in Model)
+                            {
+                                <tr>
+                                    <td>@ebook.Title</td>
+                                    <td>@ebook.Volume</td>
+                                    <td>@ebook.Category</td>
+                                    @*<td>@ebook.CreatedOn</td>*@
+                                    <td>@ebook.TextBookPages</td>
+                                    <td>@ebook.WorkBookPages</td>
+
+                                    <td>@ebook.TextBookprise</td>
+                                    <td>@ebook.WorkBookprise</td>
+
+                                    <td>@ebook.Year</td>
+                                    <td>@ebook.Month</td>
+
+                                    <td>
+                                        <a href="~/Uploads/PDFs/@ebook.TextBookPdf" target="_blank">Download</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 🔍 JavaScript Filter -->
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        var input = this.value.toLowerCase();
+        var rows = document.querySelectorAll("#ebookTable tbody tr");
+
+        rows.forEach(function (row) {
+            var text = row.textContent.toLowerCase();
+            row.style.display = text.includes(input) ? "" : "none";
+        });
+    });
+</script>
+
+
+

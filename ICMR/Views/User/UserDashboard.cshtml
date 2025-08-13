@@ -1,0 +1,56 @@
+﻿@model List<ICMR.Models.proccas>
+
+@{
+    ViewBag.Title = "User Dashboard";
+}
+<section class="Common-Section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                <div class="breadcrumbs pb-0 aos-init aos-animate" data-aos="fade-up">
+                    <ol>
+                        <li><a href="~/User/UserHome">Home</a></li>
+                        <li>User Details</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h3>Items Details</h3>
+        <div class="row">           
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-danger">
+                        <th>Title</th>
+                        <th>Email</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.casetitle
+                            </td>
+                            <td>
+                                @Session["userEmail"]
+                            </td>
+                            <td>
+                                @item.amount
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+     </div>
+   </div>
+</section>
+
+ 
+

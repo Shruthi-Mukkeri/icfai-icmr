@@ -1,0 +1,85 @@
+﻿@model ICMR.Models.ICMRFaculty
+
+@{
+    ViewBag.Title = "Edit Faculty Profile";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card border-0 shadow">
+        <div class="card-body">
+            <h2 class="mb-4">Edit Faculty Profile</h2>
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+            }
+
+            <form action="@Url.Action("EditPrifile", "Admin")" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.FacultyId)
+
+                <div class="row mb-3">
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="text" id="FacultyName" name="FacultyName" class="form-control" value="@Model.FacultyName" placeholder="Faculty Name" required>
+                        <label for="FacultyName">Faculty Name</label>
+                    </div>
+
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="text" id="FacultyDesignation" name="FacultyDesignation" class="form-control" value="@Model.FacultyDesignation" placeholder="Designation">
+                        <label for="FacultyDesignation">Designation</label>
+                    </div>
+
+                    <div class="col-md-4 form-floating mb-3">
+                        <input type="number" id="FacultyExperience" name="FacultyExperience" class="form-control" value="@Model.FacultyExperience" placeholder="Experience">
+                        <label for="FacultyExperience">Experience (Years)</label>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+
+
+                    <div class="col-md-4">
+                        <label for="ImageFile" class="form-label">Upload New Image</label>
+                        @if (!string.IsNullOrEmpty(Model.FacultyImage))
+                        {
+                            <a target="_blank" class="ms-3 text-danger" href="@Url.Content("~/Uploads/Images/" + Model.FacultyImage)">View Current Image</a>
+                        }
+                        else
+                        {
+                            <span>No Image</span>
+                        }
+                        <input type="file" id="ImageFile" name="ImageFile" class="form-control" accept="image/*">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="PdfFile" class="form-label">Upload New Resume (PDF)</label>
+                        @if (!string.IsNullOrEmpty(Model.FacultyResume))
+                        {
+                            <a class="text-danger ms-3" href="@Url.Content("~/Uploads/PDFs/" + Model.FacultyResume)" target="_blank"> View Current Resume</a>
+                        }
+                        else
+                        {
+                            <span>No Resume</span>
+                        }
+                        <input type="file" id="PdfFile" name="PdfFile" class="form-control" accept=".pdf,application/pdf">
+                    </div>
+
+                </div>
+                 
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-danger">Save Changes</button>
+                        <a href="@Url.Action("Profiles", "Admin")" class="btn btn-secondary ms-2">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+
+  
+</div>

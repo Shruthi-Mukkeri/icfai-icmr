@@ -1,0 +1,208 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@{
+    ViewBag.Title = "AddTextBooks";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<section>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data" action="/Admin/SubmitTextBooks">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h3 class="mb-4">Add TextBook</h3>
+                    <div class="row g-3">
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="text" class="form-control" id="Title" name="Title" placeholder="Title">
+                            <label for="Title">Title</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="text" class="form-control" id="Volume" name="Volume" placeholder="Volume">
+                            <label for="Volume">Volume</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="text" class="form-control" id="Category" name="Category" placeholder="Category">
+                            <label for="Category">Category</label>
+                        </div>
+
+
+                        @*<div class="col-md-3 mb-2 form-floating">
+                            <input type="text" class="form-control" id="LocalIpAddress" name="LocalIpAddress" placeholder="Local IP Address">
+                            <label for="LocalIpAddress">Local IP Address</label>
+                        </div>*@
+
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="number" class="form-control" id="TextBookPages" name="TextBookPages" placeholder="TextBook Pages">
+                            <label for="TextBookPages">TextBook Pages</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="number" class="form-control" id="WorkBookPages" name="WorkBookPages" placeholder="WorkBook Pages">
+                            <label for="WorkBookPages">WorkBook Pages</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="number" step="0.01" class="form-control" id="TextBookprise" name="TextBookprise" placeholder="TextBook Price">
+                            <label for="TextBookprise">TextBook Price</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="number" step="0.01" class="form-control" id="WorkBookprise" name="WorkBookprise" placeholder="WorkBook Price">
+                            <label for="WorkBookprise">WorkBook Price</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="number" class="form-control" id="Year" name="Year" placeholder="Year">
+                            <label for="Year">Year</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="number" class="form-control" id="Month" name="Month" placeholder="Month">
+                            <label for="Month">Month</label>
+                        </div>
+                        <div class="col-md-3 mb-2 form-floating">
+                            <input type="file" class="form-control" id="TextBookPdf" name="TextBookPdf" placeholder="TextBook PDF" accept=".pdf">
+                            <label for="TextBookPdf">TextBook PDF</label>
+                        </div>
+                        <div class="card border-0 shadow mt-4">
+                            <div class="card-body">
+                                <h4 class="mb-4">Add Cover Images</h4>
+
+                                <div id="imageUploadContainer">
+                                    <div class="row g-3 image-row">
+                                        <div class="col-md-4 mb-2">
+                                            <input type="file" class="form-control" name="CoverImages" accept="image/*" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" id="addImageBtn" class="btn btn-success mt-2">
+                                    <i class="bi bi-plus-circle"></i> Add Image
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 form-floating">
+                            <textarea class="form-control" id="Overview" name="Overview" placeholder="Overview" style="height: 100px"></textarea>
+                            <label for="Overview">Overview</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h4 class="mb-4">Add Chapter</h4>
+
+                    <div id="chapterContainer">
+                        <div class="row g-3 chapter-row">
+                            <!-- Chapter No -->
+                            <div class="col-md-3 mb-2 form-floating">
+                                <input type="number" class="form-control chapter-no" name="ChapterNo" placeholder="Chapter No">
+                                <label>Chapter No</label>
+                            </div>
+
+                            <!-- Chapter Title -->
+                            <div class="col-md-3 mb-2 form-floating">
+                                <input type="text" class="form-control chapter-title" name="ChapterTitle" placeholder="Chapter Title">
+                                <label>Chapter Title</label>
+                            </div>
+                            <!-- Pages -->
+                            <div class="col-md-3 mb-2 form-floating">
+                                <input type="number" class="form-control chapter-pages" name="Pages" placeholder="Pages">
+                                <label>Pages</label>
+                            </div>
+
+                            <!-- Keywords -->
+                            <div class="col-md-3 mb-2 form-floating">
+                                <textarea class="form-control chapter-keywords" name="Keywords" placeholder="Sub Titles"></textarea>
+                                <label>Sub Titles</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Chapter Button -->
+                    <button type="button" id="addChapterBtn" class="btn btn-primary mt-3">Add Chapter</button>
+                </div>
+
+                <div class="form-floating mb-3 leadCapture-section" id="divCaptcha">
+                    @Html.MathCaptcha()
+                </div>
+            </div>
+
+
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $('#addChapterBtn').on('click', function () {
+        const lastRow = $('#chapterContainer .chapter-row').last();
+
+        const chapterNo = lastRow.find('.chapter-no').val()?.trim();
+        const chapterTitle = lastRow.find('.chapter-title').val()?.trim();
+        const pages = lastRow.find('.chapter-pages').val()?.trim();
+        const keywords = lastRow.find('.chapter-keywords').val()?.trim();
+
+        if (!chapterNo || !chapterTitle || !pages || !keywords) {
+            alert("Please fill in all chapter fields before adding.");
+            return;
+        }
+
+        // Create a new row with readonly fields
+        const newRow = $(`
+            <div class="row g-3 chapter-row">
+                <div class="col-md-3 mb-2 form-floating">
+                    <input type="number" class="form-control" name="ChapterNo" value="${chapterNo}" readonly>
+                    <label>Chapter No</label>
+                </div>
+                <div class="col-md-3 mb-2 form-floating">
+                    <input type="text" class="form-control" name="ChapterTitle" value="${chapterTitle}" readonly>
+                    <label>Chapter Title</label>
+                </div>
+                <div class="col-md-3 mb-2 form-floating">
+                    <input type="number" class="form-control" name="Pages" value="${pages}" readonly>
+                    <label>Pages</label>
+                </div>
+                <div class="col-md-3 mb-2 form-floating">
+                    <textarea class="form-control" name="Keywords" readonly>${keywords}</textarea>
+                    <label>Sub Titles</label>
+                </div>
+            </div>
+        `);
+
+        // Insert above the input row
+        newRow.insertBefore(lastRow);
+
+        // Clear the current editable row
+        lastRow.find('input, textarea').val('');
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#addImageBtn').click(function () {
+            const newImageRow = `
+                <div class="row g-3 image-row">
+                    <div class="col-md-4 mb-2">
+                        <input type="file" class="form-control" name="CoverImages" accept="image/*" />
+                    </div>
+                    <div class="col-md-2 mb-2 d-flex align-items-center">
+                        <button type="button" class="btn btn-danger btn-sm remove-image-btn">Remove</button>
+                    </div>
+                </div>
+            `;
+            $('#imageUploadContainer').append(newImageRow);
+        });
+
+        // Remove image input
+        $(document).on('click', '.remove-image-btn', function () {
+            $(this).closest('.image-row').remove();
+        });
+    });
+</script>
+
+

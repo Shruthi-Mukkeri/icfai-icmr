@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Confirm Payment";
+}
+
+<section class="container mt-5">
+    <h2 class="mb-4 text-success">Redirecting to Payment...</h2>
+
+    <form id="paymentForm" method="post" action="https://secure.ifheindia.org/PHDFee/billing.asp">
+        <input type="hidden" name="uid" value="@ViewBag.uid" />
+        <input type="hidden" name="prg" value="@ViewBag.prg" />
+        <input type="hidden" name="amt" value="@ViewBag.amt" />
+        <input type="hidden" name="cat" value="@ViewBag.cat" />
+         @*<input type="hidden" name="name" value="@ViewBag.name" />
+        <input type="hidden" name="email" value="@ViewBag.email" />
+        <input type="hidden" name="phone" value="@ViewBag.phone" />*@
+    </form>
+</section>
+
+<script>
+    // Auto-submit the form after the page loads
+    window.onload = function () {
+        document.getElementById("paymentForm").submit();
+    };
+</script>

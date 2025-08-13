@@ -1,0 +1,87 @@
+﻿@model ICMR.Models.Master_icmr
+@using System.Web.Mvc
+@{
+    ViewBag.Title = "User Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .login-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background-color: #f8f9fa;
+    }
+
+    .login-image {
+        background: url('/images/login-banner.jpg') no-repeat center center;
+        background-size: cover;
+        height: 100%;
+    }
+
+    .login-card {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .login-title {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .brand-text {
+        font-size: 0.9rem;
+        color: #dc3545;
+    }
+</style>
+
+<section class="login-section">
+    <div class="container-fluid">
+        <div class="row g-0">
+            <!-- Left Side Image -->
+            <div class="col-md-6 login-image d-none d-md-block">
+            </div>
+
+            <!-- Right Side Form -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="login-card" style="width: 100%; max-width: 400px;">
+
+                    <div class="brand-text mb-2">
+                        Register to create your ICMR account
+                    </div>
+
+                    <h3 class="text-center login-title mb-4">User Login</h3>
+
+                    <form method="post" action="@Url.Action("UserLogin", "User")">
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email Id" required />
+                            <label for="email">Email Id</label>
+                            @Html.ValidationMessage("email", "", new { @class = "text-danger small" })
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" name="Password" class="form-control" placeholder="Password" required />
+                            <label for="Password">Password</label>
+                            @Html.ValidationMessage("Password", "", new { @class = "text-danger small" })
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger btn-lg">Login</button>
+                        </div>
+                    </form>
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="mt-3 text-center">
+                            <p class="text-danger">@ViewBag.Message</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

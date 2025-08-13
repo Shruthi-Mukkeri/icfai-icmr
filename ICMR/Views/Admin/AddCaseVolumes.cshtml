@@ -1,0 +1,292 @@
+﻿
+@{
+    ViewBag.Title = "AddEbookCases";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section>
+    <div class="container">
+        <div class="card border-0 shadow mb-3">
+            <div class="card-body">
+                <form method="post" action="/Admin/AddEbookCases" enctype="multipart/form-data">
+                    <h4 class="mb-4">Ebook Case </h4>
+                    <div class="row g-3">
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <select class="form-select" id="categoryname" name="category" aria-label="Category Name" required>
+                                    <option selected disabled value="">Select Category</option>
+                                    <option>Functional Areas</option>
+                                    <option>Industries</option>
+                                    <option>Management Lessions</option>
+                                    <option>Multinational Companies</option>
+                                </select>
+                                <label for="categoryname">Category Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="ebooktitle" name="title" placeholder="Ebook Title" required>
+                                <label for="ebooktitle">Ebook Title</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="volume" name="volume" placeholder="Volume">
+                                <label for="volume">Volume</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <input type="number" name="pages" class="form-control" id="pages" placeholder="Pages">
+                                <label for="pages">Pages</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <input type="number" step="100" name="ebookPrice" class="form-control" id="ebookPrice" placeholder="Ebook Price">
+                                <label for="ebookPrice">Ebook Price</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <select class="form-select" id="formate" name="formate" aria-label="Category Name" required>
+                                    <option disabled value="">EBook Formate</option>
+                                    <option selected value="PDF">PDF</option>
+                                </select>
+                                <label for="formate">EBook Formate</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <input type="file" class="form-control" name="coverImage" id="coverImage" placeholder="Cover Image">
+                                <label for="coverImage">Cover Image</label>
+                            </div>
+                        </div>
+                        @{
+                            int startYear = 2000;
+                            int endYear = DateTime.Now.Year; // Current year
+                        }
+
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <select class="form-select" id="caseYear" name="caseYear" aria-label="Year">
+                                    <option selected disabled value="">Select Year</option>
+                                    @for (int year = startYear; year <= endYear; year++)
+                                    {
+                                        <option value="@year">@year</option>
+                                    }
+                                </select>
+                                <label for="caseYear">Year</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-2">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" name="month" id="month" placeholder="Month">
+                                <label for="month">Month</label>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mb-4">Ebook Case Content</h4>
+                    <div id="caseContainer">
+                        <div class="row g-3 case-row">
+                            <div class="col-md-3 mb-2">
+                                <div class="form-floating">
+                                    <select class="form-select categoryname" id="subjectCategory" name="subjectCategory" aria-label="Category Name">
+                                        <option selected disabled value="">Select Category Name</option>
+                                        @foreach (var subject in ViewBag.Subjects as SelectList)
+                                        {
+                                            <option value="@subject.Text">@subject.Text</option>
+                                        }
+                                    </select>
+                                    <label for="subjectCategory">Category Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-floating">
+                                    <select class="form-select yearDropdown" name="caseYear" aria-label="Year">
+                                        <option selected disabled value="">Select Year</option>
+                                    </select>
+                                    <label for="caseYear">Year</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-floating">
+                                    <select class="form-select monthDropdown" name="caseMonth" aria-label="Month">
+                                        <option selected disabled value="">Select Month</option>
+                                        @{
+                                            var months = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
+                                            for (int i = 0; i < 12; i++)
+                                            {
+                                                <option value="@(i + 1)">@months[i]</option>
+                                            }
+                                        }
+                                    </select>
+                                    <label for="caseMonth">Month</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 mb-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="caseTitle" name="caseTitle" placeholder="Case Title">
+                                    <label for="caseTitle">Case Title</label>
+                                </div>
+                            </div>
+
+                            @*<div class="col-md-3 mb-2">
+                                    <div class="form-floating">
+                                        <input type="text" name="casenumber" id="casenumber" class="form-control casenumber" placeholder="Case Number">
+                                        <label for="casenumber">Case Number</label>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+
+                    <!-- Move button below the row -->
+                    <div class="row">
+                        <div class="col-md-12 text-end mt-2">
+                            <button type="button" class="btn btn-success" id="addRowBtn">+ Add Row</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-danger ">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+@if (TempData["AddEbookCasesMessage"] != null)
+{
+    <script>
+        alert('@TempData["AddEbookCasesMessage"]');
+    </script>
+}
+
+@section Scripts {
+    <script>
+    function loadYearsByCategory(row, subject) {
+        $.ajax({
+            url: '@Url.Action("GetYearsBySubject", "Admin")',
+            type: 'GET',
+            data: { subject: subject },
+            success: function (data) {
+                const yearDropdown = row.find('.yearDropdown');
+                yearDropdown.empty().append('<option selected disabled value="">Select Year</option>');
+                $.each(data, function (i, year) {
+                    yearDropdown.append('<option value="' + year + '">' + year + '</option>');
+                });
+
+                // Clear dependent dropdowns
+                row.find('.monthDropdown').empty().append('<option selected disabled value="">Select Month</option>');
+                row.find('.casetitle').empty().append('<option selected disabled value="">Select Case Title</option>');
+            },
+            error: function () {
+                alert('Failed to load years for selected subject.');
+            }
+        });
+    }
+
+        function loadMonthsForYear(row, year, subject) {
+            console.log(row, year, subject, "oooooooooooooooo");
+        $.ajax({
+            url: '@Url.Action("GetMonthsByYearAndSubject", "Admin")', // You'll create this action
+            type: 'GET',
+            data: { year: year, subject: subject },
+            success: function (data) {
+                console.log(data, "datadatadatadatadatadata");
+                const monthDropdown = row.find('.monthDropdown');
+                console.log(monthDropdown,"monthDropdown")
+                monthDropdown.empty().append('<option selected disabled value="">Select Month</option>');
+                $.each(data, function (i, month) {
+                    monthDropdown.append('<option value="' + month.Value + '">' + month.Text + '</option>');
+                });
+
+                // Clear case titles
+                row.find('.casetitle').empty().append('<option selected disabled value="">Select Case Title</option>');
+            },
+            error: function () {
+                alert('Failed to load months for selected year and subject.');
+            }
+        });
+    }
+
+    function loadCaseTitles(row) {
+        const subject = row.find('.categoryname').val();
+        const year = row.find('.yearDropdown').val();
+        const month = row.find('.monthDropdown').val();
+        const caseTitleSelect = row.find('.casetitle');
+
+        if (subject && year && month) {
+            $.ajax({
+                url: '@Url.Action("GetCaseTitlesBySubject", "Admin")',
+                type: 'GET',
+                data: { subject: subject, year: year, month: month },
+                success: function (data) {
+                    caseTitleSelect.empty().append('<option selected disabled value="">Select Case Title</option>');
+                    $.each(data, function (i, title) {
+                        caseTitleSelect.append('<option value="' + title + '">' + title + '</option>');
+                    });
+                },
+                error: function () {
+                    alert('Failed to load case titles.');
+                }
+            });
+        }
+    }
+
+    $(document).ready(function () {
+        // Handle subject/category change
+        $(document).on('change', '.categoryname', function () {
+            const row = $(this).closest('.case-row');
+            const subject = $(this).val();
+            if (subject) {
+                loadYearsByCategory(row, subject);
+            }
+        });
+
+        // Handle year change
+        $(document).on('change', '.yearDropdown', function () {
+            const row = $(this).closest('.case-row');
+            const year = $(this).val();
+            const subject = row.find('.categoryname').val();
+            if (year && subject) {
+                loadMonthsForYear(row, year, subject);
+            }
+        });
+
+        // Handle month or other filter change
+        $(document).on('change', '.monthDropdown', function () {
+            const row = $(this).closest('.case-row');
+            loadCaseTitles(row);
+        });
+
+        // Add new row
+        $('#addRowBtn').on('click', function () {
+            const lastRow = $('#caseContainer .case-row').last();
+            const category = lastRow.find('.categoryname').val();
+            const casetitle = lastRow.find('.casetitle').val();
+
+            if (!category || !casetitle) {
+                alert("Please fill all fields before adding a new row.");
+                return;
+            }
+
+            const newRow = lastRow.clone();
+
+            // Reset dropdowns and inputs
+            newRow.find('.categoryname').val('');
+            newRow.find('.yearDropdown').empty().append('<option selected disabled value="">Select Year</option>');
+            newRow.find('.monthDropdown').empty().append('<option selected disabled value="">Select Month</option>');
+            newRow.find('.casetitle').empty().append('<option selected disabled value="">Select Case Title</option>');
+
+            $('#caseContainer').append(newRow);
+        });
+    });
+    </script>
+
+}
+
+

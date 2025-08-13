@@ -1,0 +1,98 @@
+﻿@model ICMR.Models.Master_icmr
+
+@{
+    ViewBag.Title = "User Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="Common-Section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                <div class="breadcrumbs pb-0 aos-init aos-animate" data-aos="fade-up">
+                    <ol>
+                        <li><a href="~/User/UserHome">Home</a></li>
+                        <li>User Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-success text-white text-center rounded-top-4">
+                    <h3 class="mb-0">User Profile</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" value="@Model.first_name" readonly />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" value="@Model.last_name" readonly />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" value="@Model.add1" readonly />
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" value="@Model.city" readonly />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">State</label>
+                                <input type="text" class="form-control" value="@Model.state" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">PIN</label>
+                                <input type="text" class="form-control" value="@Model.PIN" readonly />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Country</label>
+                                <input type="text" class="form-control" value="@Model.country" readonly />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Phone</label>
+                            <input type="text" class="form-control" value="@Model.mobile_phone" readonly />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" value="@Model.email" readonly />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Organization GST</label>
+                            <input type="text" class="form-control" value="@Model.OrgGST" readonly />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="text" class="form-control" value="@Model.Password" readonly />
+                        </div>
+
+                        <div class="text-center">
+                            <a href="@Url.Action("EditProfile", "User")" class="btn btn-primary">Edit Profile</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

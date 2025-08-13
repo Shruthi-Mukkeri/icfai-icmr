@@ -1,0 +1,78 @@
+﻿@model ICMR.Models.ICMRFaculty
+
+@{
+    ViewBag.Title = "Edit Faculty Profile";
+}
+
+<h2>Edit Faculty Profile</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<form action="@Url.Action("EditPrifile", "Home")" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.FacultyId)
+
+    <div class="form-group">
+        <label for="FacultyName">Faculty Name</label>
+        <input type="text" id="FacultyName" name="FacultyName" class="form-control" value="@Model.FacultyName" required>
+    </div>
+
+    <div class="form-group">
+        <label for="FacultyDesignation">Designation</label>
+        <input type="text" id="FacultyDesignation" name="FacultyDesignation" class="form-control" value="@Model.FacultyDesignation">
+    </div>
+
+    <div class="form-group">
+        <label for="FacultyExperience">Experience (Years)</label>
+        <input type="number" id="FacultyExperience" name="FacultyExperience" class="form-control" value="@Model.FacultyExperience">
+    </div>
+
+    <div class="form-group">
+        <label>Current Image</label><br>
+        @if (!string.IsNullOrEmpty(Model.FacultyImage))
+        {
+            <img src="@Url.Content("~/Uploads/Images/" + Model.FacultyImage)" alt="Faculty Image" width="100" height="100" />
+        }
+        else
+        {
+            <span>No Image</span>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="ImageFile">Upload New Image</label>
+        <input type="file" id="ImageFile" name="ImageFile" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Current Resume</label><br>
+        @if (!string.IsNullOrEmpty(Model.FacultyResume))
+        {
+            <a href="@Url.Content("~/Uploads/PDFs/" + Model.FacultyResume)" target="_blank">View Resume</a>
+        }
+        else
+        {
+            <span>No Resume</span>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="PdfFile">Upload New Resume (PDF)</label>
+        <input type="file" id="PdfFile" name="PdfFile" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="UpdatedBy">Updated By</label>
+        <input type="text" id="UpdatedBy" name="UpdatedBy" class="form-control" value="@Model.UpdatedBy">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="@Url.Action("Profiles", "Home")" class="btn btn-secondary">Cancel</a>
+</form>

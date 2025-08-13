@@ -1,0 +1,64 @@
+﻿@model ICMR.Models.CartViewModel
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<section class="Common-Section bg-light">
+    <div class="container">
+        <h2>Shopping Cart</h2>
+        @{
+            var totalPrice = (Model.AvaCases?.Sum(x => x.pricers ?? 0) ?? 0) + (Model.AvaShortCases?.Sum(x => x.pricers ?? 0) ?? 0);
+        }
+
+        @if ((Model.AvaCases.Any()) || (Model.AvaShortCases.Any()))
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-danger">
+                        <th>Title</th>
+                        <th>Price (₹)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AvaCases)
+                    {
+                        <tr>
+                            <td>@item.casetitle</td>
+                            <td>₹ @item.pricers</td>
+                            <td>
+                                <a href="@Url.Action("RemoveFromCart", "Home", new { id = item.Id, type = "full" })" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                    }
+                    @foreach (var item in Model.AvaShortCases)
+                    {
+                        <tr>
+                            <td>@item.casetitle</td>
+                            <td>₹ @item.pricers</td>
+                            <td>
+                                <a href="@Url.Action("RemoveFromCart", "Home", new { id = item.Id, type = "short" })" class="btn btn-danger btn-sm">Remove</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h4>Total Price: ₹ @totalPrice</h4>
+                <div class="d-flex">
+                    <a href="@Url.Action("ClearCart", "Home")" class="btn btn-warning me-2">Clear Cart</a>
+                    <form action="@Url.Action("ProceedToPayAll", "Home")" method="post">
+                        <button type="submit" class="btn btn-success">Proceed To Pay All</button>
+                    </form>
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <p>Your cart is empty.</p>
+        }
+    </div>
+</section>

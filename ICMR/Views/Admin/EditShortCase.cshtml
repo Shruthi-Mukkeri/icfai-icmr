@@ -1,0 +1,177 @@
+﻿@model ICMR.Models.AvaCas
+
+@{
+    ViewBag.Title = "Edit Case Study";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow rounded-4">
+        <div class=" mb-3">
+            <a href="@Url.Action("DisplayShortCases", "Admin")" class="btn btn-danger ">Go Back</a>
+        </div>
+
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Edit Case Study</h4>
+        </div>
+        <div class="card-body">
+            <form action="@Url.Action("EditShortCase", "Admin")" method="post" enctype="multipart/form-data">
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Case Title</label>
+                        @Html.TextBoxFor(m => m.casetitle, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Area</label>
+                        @Html.TextBoxFor(m => m.area, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Company</label>
+                        @Html.TextBoxFor(m => m.company, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Industry</label>
+                        @Html.TextBoxFor(m => m.industry, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Case Code</label>
+                        @Html.TextBoxFor(m => m.casecode, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Teaching Case</label>
+                        @Html.TextBoxFor(m => m.caseteach, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Price (Rs.)</label>
+                        @Html.TextBoxFor(m => m.pricers, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Price (dollar)</label>
+                        @Html.TextBoxFor(m => m.pricedollar, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Country</label>
+                        @Html.TextBoxFor(m => m.country, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">subject</label>
+                        @Html.TextBoxFor(m => m.subject, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Case Length</label>
+                        @Html.TextBoxFor(m => m.CaseLength, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Period</label>
+                        @Html.TextBoxFor(m => m.Period, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Publication Date</label>
+                        @Html.TextBoxFor(m => m.PubDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Organization</label>
+                        @Html.TextBoxFor(m => m.Organization, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Themes</label>
+                        @Html.TextBoxFor(m => m.Themes, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label class="form-label">Pindustry</label>
+                        @Html.TextBoxFor(m => m.pindustry, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Secindustry</label>
+                        @Html.TextBoxFor(m => m.secindustry, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Subindustry</label>
+                        @Html.TextBoxFor(m => m.subindustry, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Region</label>
+                        @Html.TextBoxFor(m => m.region, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Author</label>
+                        @Html.TextBoxFor(m => m.author, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Centername</label>
+                        @Html.TextBoxFor(m => m.centername, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea1</label>
+                        @Html.TextBoxFor(m => m.SecondaryArea1, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea2</label>
+                        @Html.TextBoxFor(m => m.SecondaryArea2, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea3</label>
+                        @Html.TextBoxFor(m => m.SecondaryArea3, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea4</label>
+                        @Html.TextBoxFor(m => m.SecondaryArea4, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea5</label>
+                        @Html.TextBoxFor(m => m.SecondaryArea5, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea6</label>
+                        @Html.TextBoxFor(m => m.SecondaryArea6, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Market</label>
+                        @Html.TextBoxFor(m => m.Market, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Discipline</label>
+                        @Html.TextBoxFor(m => m.Discipline, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">P Area</label>
+                        @Html.TextBoxFor(m => m.area, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Keywords</label>
+                        @Html.TextBoxFor(m => m.keywords, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Upload New PDF</label>
+                        <input type="file" name="PdfFile" class="form-control" accept=".pdf,application/pdf" />
+                        @if (!string.IsNullOrEmpty(Model.PDF))
+                        {
+                            <div class="mt-2">
+                                <a href="@Url.Content("~/Uploads/PDFs/" + Model.PDF)" target="_blank">View Current PDF</a>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-12">
+                        <label for="Description">Description</label>
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", id = "editor", rows = "5" })
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success w-100">Update Case Study</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

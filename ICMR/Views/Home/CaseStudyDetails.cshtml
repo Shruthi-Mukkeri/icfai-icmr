@@ -1,0 +1,490 @@
+﻿@{
+    ViewBag.Title = "Sterlite Copper-Should the Plant be Reopened?";
+    ViewBag.MetaDescription = "UK-based Vedanta Plc’s Sterlite Copper’s plant in Thoothukudi";
+    ViewBag.MetaKeywords = "Sterlite; copper plant; business and environment; pollution; responsible business; profits vs purpose; environmental responsibility; commercial vs ethical issues; business environment; employment generation;";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Url = "case-study-details";
+}
+
+@model ICMR.Models.AvaCas
+@{
+    var contents = ViewBag.Contents as List<ICMR.Models.tblCaseDetail>; // ✅ Fix: must be in @{}
+}
+
+
+<section class="Common-Section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                <div class="breadcrumbs pb-0" data-aos="fade-up">
+                    <ol>
+                        <li><a href="~/">Home</a></li>
+                        <li>Privacy Policy</li>
+                        <li>Case Collection</li>
+                        <li>Business Environment</li>
+                        <li>Details</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-3 details-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <div class="card shadow border-0 p-2">
+                    <div class="card-body">
+                        <h3 class="fs-4">@Model.casetitle</h3>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="text-start mb-3">
+                                    <span class="mt-2 me-2"><i class="bi bi-currency-rupee"></i>Price: <span>@Model.pricers</span></span>
+                                    <button class="btn btn-danger btn-sm text-white add-to-cart-btn"
+                                            data-id="@Model.Id"
+                                            data-type="full">
+                                        <i class="bi bi-handbag"></i> Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+
+                            <h5>Details</h5>
+                            <div class="case-details bg3 card shadow-sm">
+                                <div class="row">
+                                    <!-- LEFT PANEL -->
+                                    <div class="col-xl-4 col-lg-5 col-md-6 col-12 border-end">
+                                        <div class="p-3">
+                                            @*<h5 class="text-primary">@Model.casetitle</h5>*@
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Case Code:</span>
+                                                <p class="ms-2 mb-1">@Model.casecode</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Case Length:</span>
+                                                <p class="ms-2 mb-1">@Model.CaseLength</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Period:</span>
+                                                <p class="ms-2 mb-1">@Model.Period</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Pub Date:</span>
+                                                <p class="ms-2 mb-1">@Model.PubDate</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Teaching Note:</span>
+                                                <p class="ms-2 mb-1">@(Model.caseteach ?? "Not Available")</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- RIGHT PANEL -->
+                                    <div class="col-xl-8 col-lg-7 col-md-6 col-12">
+                                        <div class="p-3">
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Price (Rs):</span>
+                                                <p class="ms-2 mb-1">@Model.pricers</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Organization:</span>
+                                                <p class="ms-2 mb-1">@Model.Organization</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Industry:</span>
+                                                <p class="ms-2 mb-1">@Model.industry</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Country:</span>
+                                                <p class="ms-2 mb-1">@Model.country</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <span class="text-secondary">Themes:</span>
+                                                <p class="ms-2 mb-1">@Model.Themes</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-4">
+
+            <div class="mb-4">
+                <h5 class="text-danger mb-1">Introduction</h5>
+                <p>@Html.Raw(Model.Description)</p>
+            </div>
+
+
+            <h5 class="text-danger mb-3">Contents</h5>
+
+            @if (contents != null && contents.Any())
+            {
+                <div class="accordion" id="contentAccordion">
+                    @for (int i = 0; i < contents.Count; i++)
+                    {
+                        var item = contents[i];
+                        var collapseId = "collapse" + i;
+                        var headingId = "heading" + i;
+
+                        <div class="accordion-item mb-2">
+                            <h2 class="accordion-header" id="@headingId">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId" aria-expanded="false" aria-controls="@collapseId">
+                                    @item.Introduction
+                                </button>
+                            </h2>
+                            <div id="@collapseId" class="accordion-collapse collapse" aria-labelledby="@headingId" data-bs-parent="#contentAccordion">
+                                <div class="accordion-body">
+                                    @Html.Raw(item.Content)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p class="text-muted">No content available for this case study.</p>
+            }
+
+            <div class="mb-4">
+                <h5 class="text-danger mb-1">Keywords</h5>
+                <p>@Model.keywords</p>
+            </div>
+        </div>
+
+
+        @*<div class="card border-0 shadow mb-3">
+                <div class="card-body">
+                    <div class="row CustomTabs">
+                        <div class="col-xl-12">
+                            <ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a href="#pills-1" class="nav-link active" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1" aria-selected="true">Abstract</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a href="#pills-2" class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2" aria-selected="false">Case Intro 1</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a href="#pills-3" class="nav-link" id="pills-3-tab" data-bs-toggle="pill" data-bs-target="#pills-3" type="button" role="tab" aria-controls="pills-3" aria-selected="false">Case Intro 2</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a href="#pills-4" class="nav-link" id="pills-4-tab" data-bs-toggle="pill" data-bs-target="#pills-4" type="button" role="tab" aria-controls="pills-4" aria-selected="false">Excerpts</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content mt-3" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+
+                                    <p>UK-based Vedanta Plc’s Sterlite Copper’s plant in Thoothukudi Tamil Nadu was shut down after opposition from local residents, NGOs and environmental activists. The plant accounted for 36% of copper production in the country and the closure resulted in supply shortages. But activists complained of pollution the plant has caused in Thoothukudi and surrounding areas impacting the health of people. At the same time it provided employment to more than 3500 people directly and many more indirectly.</p>
+                                    <h5 class="text-danger mb-1">Issues</h5>
+                                    <h6>The case is structured to achieve the following teaching objectives:</h6>
+                                    <ul>
+                                        <li>Evaluate the conflict between profits and the adverse impacts of a business.</li>
+                                        <li>Analyze the responsibility of a business toward its stakeholders</li>
+                                        <li>Analyze the roles and expectations of various stakeholders affected by business issues</li>
+                                        <li>Examine the responsibilities of organizations toward environmental issues</li>
+                                        <li>Address the tensions caused by an interplay of commercial and ethical issues</li>
+
+
+                                    </ul>
+                                    <h5 class="text-danger mb-2">Contents</h5>
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading1">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                                    Introduction
+                                                </button>
+                                            </h2>
+                                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>P Ramnath (Ramnath), CEO of India-based Sterlite Copper (Sterlite) , was standing in front of Sterlite’s 400,000 per annum copper smelter and associated facilities at Thoothukudi (also called Tuticorin) in the south Indian state of Tamil Nadu braving the hot Indian summer. What bothered him more than the scorching heat was the fact that he was not able to enter the facilities he had managed until a few days earlier, as they had been shut down by an order of the court in May 2018. The order had followed an instruction issued by the Environment and Forest Department of the State for their permanent closure.</p>
+                                                    <p>The closure was the result of the killing of 13 persons in police firing at an anti-Sterlite rally, where protestors damaged public property. The rally, comprising 20,000 people, was organized to mark 100 days of peaceful protests against the proposed doubling of copper production to 800,000 tons per year. The locals had alleged that untreated effluents and unsustainable disposal of copper slag, gypsum, and other life-threatening waste products led to air, water, and soil contamination, affecting their health and livelihoods.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                                    About Vedanta
+                                                </button>
+                                            </h2>
+                                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>Sterlite Industries, founded in 1979, had acquired mining concessions across India. It went public in 1988. In 1991, Sterlite commissioned a continuous cast copper rod plant. In 1992, the founders of Sterlite established Volcan Investments in the Bahamas, which was its holding company. Sterlite acquired several sick companies that the Government of India sold in the 1990s. These included Bharat Aluminium Company Ltd. and Hindustan Zinc Limited.</p>
+                                                    <p>In 2003, the founders incorporated a company – Angelchange Limited – in the UK. The name was later changed to Vedanta Resources and it was re-registered as a public limited company. Vedanta Resources functioned as a flagship company of Vedanta Plc.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading3">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                                    Sterlite in Tamil Nadu
+                                                </button>
+                                            </h2>
+                                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>Sterlite was allotted 500 acres of land in the western Indian state of Maharashtra in 1992 to set up a copper smelter at an investment or Rs.7 billion. Though work on the project began, it had to be suspended in 1993 after locals went on a year-long agitation. The people of Ratnagiri, where the plant was to be located, demonstrated their opposition to the plant citing the sensitive coastal environment in the area. They were concerned about the high sulfur emission and slag which could adversely impact local crops like the Alphonso mango, cashew, and coconut. An expert committee constituted by the Maharashtra government to look into the matter, agreed with the people.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading4">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                                    The Problems Begin
+                                                </button>
+                                            </h2>
+                                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>Just a few months after the plant started operating, the residents of Toothukodi started facing problems. They complained of health issues like headaches, coughs, choking, etc., due to smoke from the plant. In 1997, several workers in a plant near the factory fainted due to a gas leak from Sterlite. The people lodged complaints with the district administration. But the TNPCB and the district administration defended Sterlite..</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading5">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                                    Violations Persist
+                                                </button>
+                                            </h2>
+                                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>In March 2013, the locals complained that they were experiencing a feeling of suffocation, eye irritation, cough, and other conditions of severe discomfort because of the pollution caused by the Sterlite plant. Sterlite, however, argued that the high levels of pollution could be due to other plants located in the vicinity. But when the pollution measuring equipment at the sulfuric acid plant was checked..</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading6">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                                    Impact of Unsustainable Growth
+                                                </button>
+                                            </h2>
+                                            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>The groundwater in several areas around the plant was highly contaminated. The public hand pumps in Kumareddiapuram located 500 meters from the smelter complex yielded water that was yellow in color. Within one year of the smelter’s operations being launched – in 1997 – the complaints of groundwater contamination started pouring in. But no remedial action was taken. The villagers were forced to buy expensive bottled water for drinking. But they still used the groundwater for bathing and washing and that left them exposed to the contamination..</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading7">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                                    2018 Crisis
+                                                </button>
+                                            </h2>
+                                            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>In February 2018, Sterlite announced a brownfield expansion of the plant, doubling the annual production capacity to 800,000 tons per year. It had filed an application for obtaining environmental clearance for proposed capacity expansion..</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading8">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                                    The Aftermath
+                                                </button>
+                                            </h2>
+                                            <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>The government announced a compensation of Rs.1 million for those killed in the protest. This was later increased to Rs.2 million. But this did little to douse the anger of the people. According to a woman whose house was located close to the plant, “If we kill someone from their family and offer them money, will they agree to it?”..</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading9">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                                    What next?
+                                                </button>
+                                            </h2>
+                                            <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>In May 2018, Sterlite requested the TNPCB to permit the operation of emergency support services and to restore minimum power supply as the tanks that stored sulfuric acid were prone to corrosion and could be hazardous. In the appeal, Sterlite stated that a technical procedure needed be followed before the plant could be shut down. But the government of Tamil Nadu issued an order for the permanent closure of the plant...</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading10">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                                                    Exhibits
+                                                </button>
+                                            </h2>
+                                            <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Exhibit I: Group Structure</li>
+                                                        <li>Exhibit II: Mission of Sterlite Copper</li>
+                                                        <li>Exhibit III: Map of Tamil Nadu and location of Thoothukudi</li>
+                                                        <li>Exhibit IV: Environmental Impact of Copper Production</li>
+                                                        <li>Exhibit V: NEERI Mandate</li>
+                                                        <li>Exhibit VI: Annual Report Showing Production Details</li>
+                                                        <li>Exhibit VII: NEERI Report – 2011</li>
+                                                        <li>Exhibit VIII: Pages from the NEERI Report</li>
+                                                        <li>Exhibit IX: Sulphur Dioxide Levels on March 23, 2013 at Sterlite Copper</li>
+                                                        <li>Exhibit X: Precautionary Steps Suggested by NGT to Safeguard the Environment</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="text-danger mb-1">Keywords</h5>
+                                    <p>Sterlite; copper plant; business and environment; pollution; responsible business; profits vs purpose; environmental responsibility; commercial vs ethical issues; business environment; employment generation;</p>
+
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+
+                                    <h5 class="text-danger mb-1">Introduction</h5>
+                                    <p>P Ramnath (Ramnath), CEO of India-based Sterlite Copper (Sterlite) , was standing in front of Sterlite’s 400,000 per annum copper smelter and associated facilities at Thoothukudi (also called Tuticorin) in the south Indian state of Tamil Nadu braving the hot Indian summer. What bothered him more than the scorching heat was the fact that he was not able to enter the facilities he had managed until a few days earlier, as they had been shut down by an order of the court in May 2018. The order had followed an instruction issued by the Environment and Forest Department of the State for their permanent closure.</p>
+                                    <p>The closure was the result of the killing of 13 persons in police firing at an anti-Sterlite rally, where protestors damaged public property. The rally, comprising 20,000 people, was organized to mark 100 days of peaceful protests against the proposed doubling of copper production to 800,000 tons per year. The locals had alleged that untreated effluents and unsustainable disposal of copper slag, gypsum, and other life-threatening waste products led to air, water, and soil contamination, affecting their health and livelihoods.</p>
+
+
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+
+                                    <h5 class="text-danger mb-1">About Vedanta</h5>
+                                    <p>Sterlite Industries, founded in 1979, had acquired mining concessions across India. It went public in 1988. In 1991, Sterlite commissioned a continuous cast copper rod plant. In 1992, the founders of Sterlite established Volcan Investments in the Bahamas, which was its holding company. Sterlite acquired several sick companies that the Government of India sold in the 1990s. These included Bharat Aluminium Company Ltd. and Hindustan Zinc Limited.</p>
+                                    <p>In 2003, the founders incorporated a company – Angelchange Limited – in the UK. The name was later changed to Vedanta Resources and it was re-registered as a public limited company. Vedanta Resources functioned as a flagship company of Vedanta Plc.</p>
+
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+
+                                    <h5 class="text-danger mb-1">Sterlite in Tamil Nadu</h5>
+                                    <p>Sterlite was allotted 500 acres of land in the western Indian state of Maharashtra in 1992 to set up a copper smelter at an investment or Rs.7 billion. Though work on the project began, it had to be suspended in 1993 after locals went on a year-long agitation. The people of Ratnagiri, where the plant was to be located, demonstrated their opposition to the plant citing the sensitive coastal environment in the area. They were concerned about the high sulfur emission and slag which could adversely impact local crops like the Alphonso mango, cashew, and coconut. An expert committee constituted by the Maharashtra government to look into the matter, agreed with the people.</p>
+                                    <h5 class="text-danger mb-1">The Problems Begin</h5>
+                                    <p>Just a few months after the plant started operating, the residents of Toothukodi started facing problems. They complained of health issues like headaches, coughs, choking, etc., due to smoke from the plant. In 1997, several workers in a plant near the factory fainted due to a gas leak from Sterlite. The people lodged complaints with the district administration. But the TNPCB and the district administration defended Sterlite..</p>
+                                    <h5 class="text-danger mb-1">Violations Persist</h5>
+                                    <p>In March 2013, the locals complained that they were experiencing a feeling of suffocation, eye irritation, cough, and other conditions of severe discomfort because of the pollution caused by the Sterlite plant. Sterlite, however, argued that the high levels of pollution could be due to other plants located in the vicinity. But when the pollution measuring equipment at the sulfuric acid plant was checked..</p>
+                                    <h5 class="text-danger mb-1">Impact of Unsustainable Growth</h5>
+                                    <p>The groundwater in several areas around the plant was highly contaminated. The public hand pumps in Kumareddiapuram located 500 meters from the smelter complex yielded water that was yellow in color. Within one year of the smelter’s operations being launched – in 1997 – the complaints of groundwater contamination started pouring in. But no remedial action was taken. The villagers were forced to buy expensive bottled water for drinking. But they still used the groundwater for bathing and washing and that left them exposed to the contamination..</p>
+                                    <h5 class="text-danger mb-1">2018 Crisis</h5>
+                                    <p>In February 2018, Sterlite announced a brownfield expansion of the plant, doubling the annual production capacity to 800,000 tons per year. It had filed an application for obtaining environmental clearance for proposed capacity expansion..</p>
+                                    <h5 class="text-danger mb-1">The Aftermath</h5>
+                                    <p>The government announced a compensation of Rs.1 million for those killed in the protest. This was later increased to Rs.2 million. But this did little to douse the anger of the people. According to a woman whose house was located close to the plant, “If we kill someone from their family and offer them money, will they agree to it?”..</p>
+                                    <h5 class="text-danger mb-1">What next?</h5>
+                                    <p>In May 2018, Sterlite requested the TNPCB to permit the operation of emergency support services and to restore minimum power supply as the tanks that stored sulfuric acid were prone to corrosion and could be hazardous. In the appeal, Sterlite stated that a technical procedure needed be followed before the plant could be shut down. But the government of Tamil Nadu issued an order for the permanent closure of the plant...</p>
+                                    <h5 class="text-danger mb-1">Exhibits</h5>
+                                    <ul>
+                                        <li>Exhibit I: Group Structure</li>
+                                        <li>Exhibit II: Mission of Sterlite Copper</li>
+                                        <li>Exhibit III: Map of Tamil Nadu and location of Thoothukudi</li>
+                                        <li>Exhibit IV: Environmental Impact of Copper Production</li>
+                                        <li>Exhibit V: NEERI Mandate</li>
+                                        <li>Exhibit VI: Annual Report Showing Production Details</li>
+                                        <li>Exhibit VII: NEERI Report – 2011</li>
+                                        <li>Exhibit VIII: Pages from the NEERI Report</li>
+                                        <li>Exhibit IX: Sulphur Dioxide Levels on March 23, 2013 at Sterlite Copper</li>
+                                        <li>Exhibit X: Precautionary Steps Suggested by NGT to Safeguard the Environment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <div class="card border-0 shadow bg13">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <h6>Buy this case study (Please select any one of the payment options)</h6>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="card  bg-white p-3">
+                            <div class="d-flex">
+                                <div class="icon-bg p-2 my-auto ">
+                                    <i class="bi bi-cart-dash-fill fs-4 text-secondary"></i>
+                                </div>
+                                <div class="icon-text ms-3">
+                                    <h3 class="fs-5 count mb-2">Price: <span>@Model.pricers</span></h3>
+                                    <a href="" class="btn btn-sm btn-outline-danger">Instant Download <i class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="card bg-white p-3">
+                            <div class="d-flex">
+                                <div class="icon-bg p-2 my-auto ">
+                                    <i class="bi bi-airplane-fill fs-4 text-secondary"></i>
+                                </div>
+                                <div class="icon-text ms-3">
+                                    <h3 class="fs-5 count mb-2">Price: <span>@Model.pricers</span></h3>
+                                    <a href="" class="btn btn-sm btn-outline-danger">Express Checkout <i class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="card bg-white p-3">
+                            <div class="d-flex">
+                                <div class="icon-bg p-2 my-auto ">
+                                    <i class="bi bi-bag-plus-fill fs-4 text-secondary"></i>
+                                </div>
+                                <div class="icon-text ms-3">
+                                    <h3 class="fs-5 count mb-2">PayPal: <span>@Model.pricedollar</span></h3>
+                                    <a href="" class="btn btn-sm btn-outline-danger">Add to Cart <i class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.add-to-cart-btn').click(function (e) {
+            e.preventDefault();
+
+            var caseId = $(this).data('id');
+            var caseType = $(this).data('type');
+
+            $.ajax({
+                url: '@Url.Action("AddToCart", "Home")',
+                type: 'POST',
+                data: {
+                    articleId: caseId,
+                    type: caseType
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert("Added to cart!");
+                        $('#cartCount').text(response.cartCount); // ✅ Set count dynamically
+                    } else {
+                        alert(response.message || "Could not add to cart.");
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while adding to cart.");
+                }
+            });
+        });
+    });
+</script>

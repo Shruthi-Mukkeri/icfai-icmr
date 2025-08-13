@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/assets/css")
+</head>
+<body>
+    <header class="  mainBlueColor text-white sticky-top shadow-sm">
+        <div class="container-fluid">
+
+            <div class="row customRow">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="navbar navbar-expand-xl p-0 " data-bs-theme="dark">
+                        <a class="navbar-brand p-0" href="~/"><img src="/assets/img/ICMR-White.svg" alt="ICMR (IBS Center for Management Research), IFHE Hyderabad"></a>
+                        <button class="navbar-toggler mobile-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                                aria-controls="navbarNav"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse  navbar-collapse justify-content-end " id="navbarNav">
+
+
+                            <div class="  py-xl-2">
+                                <div class="navbarContent navbar-nav py-xl-0 justify-content-end">
+                                    <div class="nav-item" data-menu="submenu1">
+                                        <span class="nav-link p-1">
+                                            <a class="text-white" href="@Url.Action("Logout", "User")">
+                                                Log Out <i class="ms-3 bi bi-box-arrow-right"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        @*<h1>Footer</h1>*@
+    </footer>
+
+
+
+    @Scripts.Render("~/assets/js")
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
+
+
+@*<script>
+    if (window.history && window.history.pushState) {
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function () {
+            window.location.href = '@Url.Action("UserLogin", "User")';
+        };
+    }
+</script>*@

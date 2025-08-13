@@ -1,0 +1,76 @@
+﻿@model List<ICMR.Models.tblEbook>
+
+@{
+    ViewBag.Title = "DisplayEBookDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section>
+    <div class="container">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+
+                <!-- 🔍 Search Box -->
+                <div class="mb-3">
+                    <input type="text" id="searchInput" class="form-control w-25" placeholder="Search eBooks...">
+                </div>
+
+                <div class="table-responsive">
+                    <table id="ebookTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Volume</th>
+                                <th>Category</th>
+                                @*<th>Created On</th>*@
+                                <th>Pages</th>
+                                <th>Price</th>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Cover Image</th>
+                                <th>eBook Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var ebook in Model)
+                            {
+                                <tr>
+                                    <td>@ebook.title</td>
+                                    <td>@ebook.volume</td>
+                                    <td>@ebook.category</td>
+                                    @*<td>@ebook.createdOn</td>*@
+                                    <td>@ebook.pages</td>
+                                    <td>@ebook.prise</td>
+                                    <td>@ebook.year</td>
+                                    <td>@ebook.month</td>
+                                    <td>
+                                        <img src="~/UploadedImages/@ebook.coverImg" width="80" height="80" />
+                                    </td>
+                                    <td>
+                                        @ebook.ebookPdf
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 🔍 JavaScript Filter -->
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        var input = this.value.toLowerCase();
+        var rows = document.querySelectorAll("#ebookTable tbody tr");
+
+        rows.forEach(function (row) {
+            var text = row.textContent.toLowerCase();
+            row.style.display = text.includes(input) ? "" : "none";
+        });
+    });
+</script>
+
+
+

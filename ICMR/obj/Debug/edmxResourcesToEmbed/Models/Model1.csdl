@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ICMRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AvaCas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="casetitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="area" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="industry" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="casecode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="caseteach" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="pricers" Type="Double" />
+    <Property Name="pricedollar" Type="Double" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ordno" Type="Double" />
+    <Property Name="new" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sdate" Type="DateTime" Precision="0" />
+    <Property Name="pindustry" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="secindustry" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="subindustry" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="AVacases_keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="region" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="author" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="centername" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea4" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea5" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea6" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Market" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Discipline" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="p_area" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AddToCart" Type="Boolean" />
+    <Property Name="PDF" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="3500" FixedLength="false" Unicode="false" />
+    <Property Name="CaseLength" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Period" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PubDate" Type="DateTime" Precision="3" />
+    <Property Name="Organization" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Themes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CaseType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UploadedRole" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UploadedId" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="LocalIpAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PublicIpAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblCaseDetails" Relationship="Self.FK__tblCaseDe__CaseI__02FC7413" FromRole="AvaCases" ToRole="tblCaseDetails" />
+  </EntityType>
+  <EntityType Name="avashortcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="casetitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="area" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="industry" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="casecode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="caseteach" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="pricers" Type="Double" />
+    <Property Name="pricedollar" Type="Double" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ordno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="new" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sdate" Type="DateTime" Precision="0" />
+    <Property Name="pindustry" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="secindustry" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="subindustry" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="AVashortcases_keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="region" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="author" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="centername" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea3" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea4" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea5" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryArea6" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Market" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Discipline" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddToCart" Type="Boolean" />
+    <Property Name="PDF" Type="String" MaxLength="750" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="3500" FixedLength="false" Unicode="false" />
+    <Property Name="CaseLength" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Period" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PubDate" Type="DateTime" Precision="3" />
+    <Property Name="Organization" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Themes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ICMREvent">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="EventDescription" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EventUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Pdf" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AltTagDescription" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ICMRFaculty">
+    <Key>
+      <PropertyRef Name="FacultyId" />
+    </Key>
+    <Property Name="FacultyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacultyImage" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FacultyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FacultyDesignation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FacultyQualification" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FacultyExperience" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FacultyResume" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ICMRLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmpId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Master_icmr">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="first_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="add1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="add2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="add3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="member_qual" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="member_compname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="member_desig" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tel_res" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel_off" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile_phone" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fax" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sdate" Type="DateTime" Precision="3" />
+    <Property Name="dcname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dophone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAlert" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Exdate" Type="DateTime" Precision="3" />
+    <Property Name="OrgGST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="proccas">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="casetitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="noc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="notn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="TransactionAmount" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblCaseDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CaseId" Type="Int32" Nullable="false" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AvaCas" Relationship="Self.FK__tblCaseDe__CaseI__02FC7413" FromRole="tblCaseDetails" ToRole="AvaCases" />
+  </EntityType>
+  <EntityType Name="tblChapter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TextBookId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ChapterNo" Type="Int32" />
+    <Property Name="ChapterTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pages" Type="Int32" />
+    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblTextBook" Relationship="Self.FK_tblChapters_tblTextBooks" FromRole="tblChapters" ToRole="tblTextBooks" />
+  </EntityType>
+  <EntityType Name="tblEbookCas">
+    <Key>
+      <PropertyRef Name="caseId" />
+    </Key>
+    <Property Name="caseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ebookId" Type="Int32" Nullable="false" />
+    <Property Name="caseTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="createdOn" Type="DateTime" Precision="3" />
+    <Property Name="userid" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="subjectCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblEbook" Relationship="Self.FK_tblEbookCases_tblEbooks" FromRole="tblEbookCases" ToRole="tblEbooks" />
+    <Property Name="casecode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEbook">
+    <Key>
+      <PropertyRef Name="ebookId" />
+    </Key>
+    <Property Name="ebookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="volume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="createdOn" Type="DateTime" Precision="3" />
+    <Property Name="ipadress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pages" Type="Int32" />
+    <Property Name="prise" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="month" Type="Int32" />
+    <Property Name="coverImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ebookPdf" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LocalIpAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblEbookCases" Relationship="Self.FK_tblEbookCases_tblEbooks" FromRole="tblEbooks" ToRole="tblEbookCases" />
+  </EntityType>
+  <EntityType Name="tblTextBookImg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TextBookId" Type="Int32" Nullable="false" />
+    <Property Name="CoverImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblTextBook" Relationship="Self.FK_tblTextBookImgs_tblTextBooks" FromRole="tblTextBookImgs" ToRole="tblTextBooks" />
+  </EntityType>
+  <EntityType Name="tblTextBook">
+    <Key>
+      <PropertyRef Name="TextBookId" />
+    </Key>
+    <Property Name="TextBookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Volume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="LocalIpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TextBookPages" Type="Int32" />
+    <Property Name="WorkBookPages" Type="Int32" />
+    <Property Name="TextBookprise" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WorkBookprise" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="TextBookPdf" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Overview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblChapters" Relationship="Self.FK_tblChapters_tblTextBooks" FromRole="tblTextBooks" ToRole="tblChapters" />
+    <NavigationProperty Name="tblTextBookImgs" Relationship="Self.FK_tblTextBookImgs_tblTextBooks" FromRole="tblTextBooks" ToRole="tblTextBookImgs" />
+  </EntityType>
+  <Association Name="FK__tblCaseDe__CaseI__02FC7413">
+    <End Role="AvaCases" Type="Self.AvaCas" Multiplicity="1" />
+    <End Role="tblCaseDetails" Type="Self.tblCaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AvaCases">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCaseDetails">
+        <PropertyRef Name="CaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblChapters_tblTextBooks">
+    <End Role="tblTextBooks" Type="Self.tblTextBook" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblChapters" Type="Self.tblChapter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTextBooks">
+        <PropertyRef Name="TextBookId" />
+      </Principal>
+      <Dependent Role="tblChapters">
+        <PropertyRef Name="TextBookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEbookCases_tblEbooks">
+    <End Role="tblEbooks" Type="Self.tblEbook" Multiplicity="1" />
+    <End Role="tblEbookCases" Type="Self.tblEbookCas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEbooks">
+        <PropertyRef Name="ebookId" />
+      </Principal>
+      <Dependent Role="tblEbookCases">
+        <PropertyRef Name="ebookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTextBookImgs_tblTextBooks">
+    <End Role="tblTextBooks" Type="Self.tblTextBook" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tblTextBookImgs" Type="Self.tblTextBookImg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTextBooks">
+        <PropertyRef Name="TextBookId" />
+      </Principal>
+      <Dependent Role="tblTextBookImgs">
+        <PropertyRef Name="TextBookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ICMREntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AvaCases" EntityType="Self.AvaCas" />
+    <EntitySet Name="avashortcases" EntityType="Self.avashortcas" />
+    <EntitySet Name="ICMREvents" EntityType="Self.ICMREvent" />
+    <EntitySet Name="ICMRFaculties" EntityType="Self.ICMRFaculty" />
+    <EntitySet Name="ICMRLogins" EntityType="Self.ICMRLogin" />
+    <EntitySet Name="Master_icmr" EntityType="Self.Master_icmr" />
+    <EntitySet Name="proccases" EntityType="Self.proccas" />
+    <EntitySet Name="tblCaseDetails" EntityType="Self.tblCaseDetail" />
+    <EntitySet Name="tblChapters" EntityType="Self.tblChapter" />
+    <EntitySet Name="tblEbookCases" EntityType="Self.tblEbookCas" />
+    <EntitySet Name="tblEbooks" EntityType="Self.tblEbook" />
+    <EntitySet Name="tblTextBookImgs" EntityType="Self.tblTextBookImg" />
+    <EntitySet Name="tblTextBooks" EntityType="Self.tblTextBook" />
+    <AssociationSet Name="FK__tblCaseDe__CaseI__02FC7413" Association="Self.FK__tblCaseDe__CaseI__02FC7413">
+      <End Role="AvaCases" EntitySet="AvaCases" />
+      <End Role="tblCaseDetails" EntitySet="tblCaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblChapters_tblTextBooks" Association="Self.FK_tblChapters_tblTextBooks">
+      <End Role="tblTextBooks" EntitySet="tblTextBooks" />
+      <End Role="tblChapters" EntitySet="tblChapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEbookCases_tblEbooks" Association="Self.FK_tblEbookCases_tblEbooks">
+      <End Role="tblEbooks" EntitySet="tblEbooks" />
+      <End Role="tblEbookCases" EntitySet="tblEbookCases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTextBookImgs_tblTextBooks" Association="Self.FK_tblTextBookImgs_tblTextBooks">
+      <End Role="tblTextBooks" EntitySet="tblTextBooks" />
+      <End Role="tblTextBookImgs" EntitySet="tblTextBookImgs" />
+    </AssociationSet>
+    <EntitySet Name="tblCaseStudies" EntityType="ICMRModel.tblCaseStudy" />
+    <EntitySet Name="tblCaseStudyVolumes" EntityType="ICMRModel.tblCaseStudyVolume" />
+    <AssociationSet Name="FK_tblCaseStudy_tblCaseStudyVolume" Association="ICMRModel.FK_tblCaseStudy_tblCaseStudyVolume">
+      <End Role="tblCaseStudyVolume" EntitySet="tblCaseStudyVolumes" />
+      <End Role="tblCaseStudy" EntitySet="tblCaseStudies" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tblCaseStudy">
+    <Key>
+      <PropertyRef Name="CaseId" />
+    </Key>
+    <Property Name="CaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CaseTudyVolumeId" Type="Int32" Nullable="false" />
+    <Property Name="CaseTitle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Casecode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblCaseStudyVolume" Relationship="ICMRModel.FK_tblCaseStudy_tblCaseStudyVolume" FromRole="tblCaseStudy" ToRole="tblCaseStudyVolume" />
+  </EntityType>
+  <EntityType Name="tblCaseStudyVolume">
+    <Key>
+      <PropertyRef Name="CaseTudyVolumeId" />
+    </Key>
+    <Property Name="CaseTudyVolumeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Volume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IpAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pages" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="CoverImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CasePdf" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LocalIpAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblCaseStudies" Relationship="ICMRModel.FK_tblCaseStudy_tblCaseStudyVolume" FromRole="tblCaseStudyVolume" ToRole="tblCaseStudy" />
+  </EntityType>
+  <Association Name="FK_tblCaseStudy_tblCaseStudyVolume">
+    <End Type="ICMRModel.tblCaseStudyVolume" Role="tblCaseStudyVolume" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="ICMRModel.tblCaseStudy" Role="tblCaseStudy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCaseStudyVolume">
+        <PropertyRef Name="CaseTudyVolumeId" />
+      </Principal>
+      <Dependent Role="tblCaseStudy">
+        <PropertyRef Name="CaseTudyVolumeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

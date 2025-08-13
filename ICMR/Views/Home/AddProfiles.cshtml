@@ -1,0 +1,57 @@
+﻿@model ICMR.Models.ICMRFaculty
+
+@{
+    ViewBag.Title = "Add Faculty Profile";
+}
+
+<h2>Add Faculty Profile</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<form action="@Url.Action("AddProfiles", "Home")" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label for="FacultyName">Faculty Name</label>
+        <input type="text" id="FacultyName" name="FacultyName" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="FacultyDesignation">Designation</label>
+        <input type="text" id="FacultyDesignation" name="FacultyDesignation" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="FacultyQualification">Qualification</label>
+        <input type="text" id="FacultyQualification" name="FacultyQualification" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="FacultyExperience">Experience (Years)</label>
+        <input type="number" id="FacultyExperience" name="FacultyExperience" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="ImageFile">Upload Image</label>
+        <input type="file" id="ImageFile" name="ImageFile" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="PdfFile">Upload Resume (PDF)</label>
+        <input type="file" id="PdfFile" name="PdfFile" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="CreatedBy">Created By</label>
+        <input type="text" id="CreatedBy" name="CreatedBy" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

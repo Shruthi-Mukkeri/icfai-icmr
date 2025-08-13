@@ -1,0 +1,91 @@
+﻿@model ICMR.Models.ICMREvent
+
+@{
+    ViewBag.Title = "Add Events";
+}
+
+<h2>Add Events</h2>
+
+@*@if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }*@
+
+
+<section class="section profile dashboard">
+    <div class="container-fluid">
+        <form action="@Url.Action("AddEvents", "Home")" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input type="text" id="Title" name="Title" class="form-control small-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Type">Type</label>
+                <input type="text" id="Type" name="Type" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="EventDescription">Event Description</label>
+                <textarea id="EventDescription" name="EventDescription" class="form-control small-textarea"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="EventDate">Event Date</label>
+                <input type="date" id="EventDate" name="EventDate" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="StartDate">Start Date</label>
+                <input type="date" id="StartDate" name="StartDate" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate">End Date</label>
+                <input type="date" id="EndDate" name="EndDate" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="EventUrl">Event Url</label>
+                <input type="text" id="EventUrl" name="EventUrl" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="ImageFile">Upload Image</label>
+                <input type="file" id="ImageFile" name="ImageFile" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="PdfFile">Upload PDF</label>
+                <input type="file" id="PdfFile" name="PdfFile" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="AltTagDescription">Alt Tag Description</label>
+                <input type="text" id="AltTagDescription" name="AltTagDescription" class="form-control small-input">
+            </div>
+
+            <div class="form-group">
+                <label for="CreatedBy">Created By</label>
+                <input type="text" id="CreatedBy" name="CreatedBy" class="form-control small-input">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+    </section>
+
+        <style>
+            .small-input {
+                height: 30px;
+                font-size: 14px;
+                padding: 4px;
+            }
+
+            .small-textarea {
+                font-size: 14px;
+                padding: 4px;
+            }
+        </style>

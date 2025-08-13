@@ -1,0 +1,156 @@
+﻿@model List<ICMR.Models.ICMRFaculty>
+
+@{
+    ViewBag.Title = "Interview";
+    ViewBag.MetaDescription = "";
+    ViewBag.MetaKeywords = "";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Url = "/case-resources/interview";
+}
+
+<section class="Common-Section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                <div class="breadcrumbs pb-0 aos-init aos-animate" data-aos="fade-up">
+                    <ol>
+                        <li><a href="~/">Home</a></li>
+                        <li>Case Resources</li>
+                        <li>Interview</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="d-md-flex d-sm-table-row">
+                            <div class="me-4">
+                                <img src="https://icmrindia.org/img/0_MqvWCIKD0qo87krJ.jpg" class="img-rounded rounded mb-3" width="200" height="200" alt="Sanjay-Fuloria">
+                            </div>
+                            <div>
+                                <h4>
+                                    Prof. Lesley Symons<br>
+                                    Leadership Coach and Facilitator
+                                </h4>
+                                <p class="text-secondary">
+                                    Lesley Symons reflects on the issues faced by women in management, dearth of female protagonists in business case studies
+                                    and working on an award-winning IBS case study
+                                </p>
+                                <a href="/interview-detail" target="_blank" class="rts-theme-btn btn-arrow">View More <span><i class="bi bi-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="d-md-flex d-sm-table-row">
+                            <div class="me-4">
+                                <img src="https://icmrindia.org/img/0_MqvWCIKD0qo87krJ.jpg" class="img-rounded rounded mb-3" width="200" height="200" alt="Sanjay-Fuloria">
+                            </div>
+                            <div>
+                                <h4>
+                                    Prof. Lesley Symons<br>
+                                    Leadership Coach and Facilitator
+                                </h4>
+                                <p class="text-secondary">
+                                    Lesley Symons reflects on the issues faced by women in management, dearth of female protagonists in business case studies
+                                    and working on an award-winning IBS case study
+                                </p>
+                                <a href="/interview-detail" target="_blank" class="rts-theme-btn btn-arrow">View More <span><i class="bi bi-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="d-md-flex d-sm-table-row">
+                            <div class="me-4">
+                                <img src="https://icmrindia.org/img/0_MqvWCIKD0qo87krJ.jpg" class="img-rounded rounded mb-3" width="200" height="200" alt="Sanjay-Fuloria">
+                            </div>
+                            <div>
+                                <h4>
+                                    Prof. Lesley Symons<br>
+                                    Leadership Coach and Facilitator
+                                </h4>
+                                <p class="text-secondary">
+                                    Lesley Symons reflects on the issues faced by women in management, dearth of female protagonists in business case studies
+                                    and working on an award-winning IBS case study
+                                </p>
+                                <a href="/interview-detail" target="_blank" class="rts-theme-btn btn-arrow">View More <span><i class="bi bi-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<section>
+        <div class="container">
+            <div class="row">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-md-flex d-sm-table-row">
+                                        <div class="me-4">
+                                            <img src="@Url.Content("~/Uploads/Images/" + (string.IsNullOrEmpty(item.FacultyImage) ? "Images.png" : item.FacultyImage))"
+                                                 class="img-rounded rounded mb-3"
+                                                 width="200"
+                                                 height="200"
+                                                 alt="@item.FacultyName" />
+
+                                        </div>
+                                        <div>
+                                            <h4>
+                                                @(item.FacultyName ?? "Faculty Name")<br />
+                                                @(item.FacultyDesignation ?? "Designation")
+                                            </h4>
+                                            <p class="text-secondary">
+                                                @(item.Details ?? "No details available.")
+                                            </p>
+
+                                            @if (!string.IsNullOrEmpty(item.FacultyResume))
+                                            {
+                                                <a href="@Url.Content("~/Uploads/PDFs/" + item.FacultyResume)" target="_blank" class="rts-theme-btn btn-arrow">
+                                                    View Resume <span><i class="bi bi-arrow-right"></i></span>
+                                                </a>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No faculty members found.</p>
+                }
+            </div>
+        </div>
+    </section>*@
+

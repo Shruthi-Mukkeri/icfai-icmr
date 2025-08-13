@@ -1,0 +1,62 @@
+﻿@model List<ICMR.Models.TextBookCaseViewModel>
+
+<section>
+    <div class="container">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Book Title</th>
+                                <th scope="col" class="text-center">Action</th>
+                                <th scope="col">Text Books</th>
+
+                                <th scope="col">Work Books</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null && Model.Any())
+                            {
+                                int index = 1;
+                                foreach (var book in Model)
+                                {
+                            <tr>
+                                <td>@index</td>
+                                <td>@book.Title</td>
+                                <td class="text-center">
+                                    <a href="@Url.Action("ByTextCategoryDetails", "Home", new { id = book.TextBookId })"
+                                       class="btn btn-sm btn-outline-secondary">
+                                        Details
+                                    </a>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="TextBooks" value="@book.ChapterNo" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="WorkBooks" value="@book.ChapterNo" />
+                                </td>
+                            </tr>
+                                    index++;
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-center text-muted">
+                                        No books found.
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

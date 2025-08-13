@@ -1,0 +1,62 @@
+﻿@model ICMR.Models.ICMREvent
+
+@{
+    ViewBag.Title = "Edit Event";
+}
+
+<h2>Edit Event</h2>
+
+@using (Html.BeginForm("EditEvent", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.EventId)
+
+    <div>
+        <label>Title:</label>
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Type:</label>
+        @Html.TextBoxFor(m => m.Type, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Event Description:</label>
+        @Html.TextAreaFor(m => m.EventDescription, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Start Date:</label>
+        @Html.TextBoxFor(m => m.StartDate, new { type = "date", @class = "form-control" })
+    </div>
+
+    <div>
+        <label>End Date:</label>
+        @Html.TextBoxFor(m => m.EndDate, new { type = "date", @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Current Image:</label>
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <br />
+            <img src="~/Uploads/Images/@Model.Image" width="100" height="100" />
+        }
+        <br />
+        <input type="file" name="ImageFile" class="form-control" />
+    </div>
+
+    <div>
+        <label>Current PDF:</label>
+        @if (!string.IsNullOrEmpty(Model.Pdf))
+        {
+            <br />
+            <a href="@Url.Content("~/Uploads/PDFs/" + Model.Pdf)" target="_blank">View PDF</a>
+        }
+        <br />
+        <input type="file" name="PdfFile" class="form-control" />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+}

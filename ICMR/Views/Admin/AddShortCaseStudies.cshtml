@@ -1,0 +1,421 @@
+﻿@model ICMR.Models.AvaCas
+@using CaptchaMvc.HtmlHelpers
+@{
+    ViewBag.Title = "Add Short Case Studies";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <div class="card shadow rounded-4">
+        <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">Add Short Case Study</h4>
+        </div>
+        <div class="card-body">
+            @*<form action="/Admin/AddFullCaseStudies" method="post">*@
+            <form action="@Url.Action("AddShortCaseStudies", "Admin")" method="post" enctype="multipart/form-data">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Case Title</label>
+                        <input type="text" id="casetitle" name="casetitle" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Area</label>
+                        <input type="text" id="area" name="area" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Company</label>
+                        <input type="text" id="company" name="company" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Industry</label>
+                        <input type="text" id="industry" name="industry" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Case Code</label>
+                        <input type="text" id="casecode" name="casecode" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Teaching Note</label>
+                        <input type="text" id="caseteach" name="caseteach" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Price (Rs)</label>
+                        <input type="number" id="pricers" step="0.01" name="pricers" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Price (dollar)</label>
+                        <input type="number" id="pricedollar" step="0.01" name="pricedollar" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Subject</label>
+                        @Html.DropDownListFor(model => model.subject, (SelectList)ViewBag.Subjects, "Select Subject", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Case Length</label>
+                        <input type="text" id="CaseLength" name="CaseLength" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Period</label>
+                        <input type="text" id="Period" name="Period" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Publication Date</label>
+                        <input type="date" id="PubDate" name="PubDate" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Organization</label>
+                        <input type="text" id="Organization" name="Organization" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Country</label>
+                        <input type="text" id="country" name="country" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">pindustry</label>
+                        <input type="text" id="pindustry" name="pindustry" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">secindustry</label>
+                        <input type="text" id="secindustry" name="secindustry" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">subindustry</label>
+                        <input type="text" id="subindustry" name="subindustry" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Region</label>
+                        <input type="text" id="region" name="region" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Author</label>
+                        <input type="text" id="author" name="author" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Centername</label>
+                        <input type="text" id="centername" name="centername" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea1</label>
+                        <input type="text" id="SecondaryArea1" name="SecondaryArea1" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea2</label>
+                        <input type="text" id="SecondaryArea2" name="SecondaryArea2" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea3</label>
+                        <input type="text" id="SecondaryArea3" name="SecondaryArea3" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea4</label>
+                        <input type="text" id="SecondaryArea4" name="SecondaryArea4" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea5</label>
+                        <input type="text" id="SecondaryArea5" name="SecondaryArea5" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">SecondaryArea6</label>
+                        <input type="text" id="SecondaryArea6" name="SecondaryArea6" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Market</label>
+                        <input type="text" id="Market" name="Market" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Discipline</label>
+                        <input type="text" id="Discipline" name="Discipline" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">P Area</label>
+                        <input type="text" id="parea" name="parea" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Keywords</label>
+                        <textarea id="Keywords" name="Keywords" class="form-control"></textarea>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label class="form-label">Abstrat</label>
+                        <textarea id="editor" name="Description" class="form-control"></textarea>
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <label class="form-label">Themes</label>
+                        <textarea name="Themes" id="Themes" class="form-control"></textarea>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Teaching Objectives</label>
+                        <textarea id="Issues" name="Issues" class="form-control"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">PDF</label>
+                        <input type="file" name="PdfFile" class="form-control" accept=".pdf,application/pdf" />
+                    </div>
+                    <h5>Contents</h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="contentList">
+                                <div class="content-item row mb-3">
+                                    <div class="col-md-6">
+                                        <label>Title</label>
+                                        <input type="text" name="Titles[]" class="form-control title-box" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Text:</label>
+                                        <textarea name="Texts[]" class="form-control text-area"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 ms-auto ">
+                        <button type="button" id="addContentBtn" class="btn btn-primary float-end">Add New Content</button>
+
+                    </div>
+
+                    <div class="form-floating mb-3 leadCapture-section" id="divCaptcha">
+                        @Html.MathCaptcha()
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mt-4">
+                    <button type="submit" class="btn btn-success btn-lg w-100">Submit Case Study</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                Swal.fire('Success', '@TempData["SuccessMessage"]', 'success');
+            </text>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                Swal.fire('Error', '@TempData["ErrorMessage"]', 'error');
+            </text>
+        }
+    </script>
+}
+<!-- jQuery (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery TE (use your local file or CDN) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.min.css" rel="stylesheet" />
+<script src="/path/to/jquery-te-1.4.0.min.js"></script> <!-- use your actual path -->
+<!-- CSS -->
+<link href="~/Content/jquery-te-1.4.0.css" rel="stylesheet" />
+
+<!-- JS -->
+<script src="~/Scripts/jquery-te-1.4.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#addContentBtn').click(function () {
+            // Get the last content-item
+            var lastItem = $('#contentList .content-item').last();
+            var title = lastItem.find('input[name="Titles[]"]').val()?.trim();
+            var text = lastItem.find('textarea[name="Texts[]"]').val()?.trim();
+
+            if (!title || !text) {
+                alert("Please enter both Title and Text before adding a new content block.");
+                return;
+            }
+
+
+            // Build new item
+            var newItem = `
+                <div class="content-item row mb-3">
+                    <div class="col-md-6">
+                        <label>Title:</label>
+                        <input type="text" name="Titles[]" class="form-control title-box" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Text:</label>
+                        <textarea name="Texts[]" class="form-control text-area"></textarea>
+                    </div>
+                </div>
+            `;
+
+            // Append and focus on the new title input
+            $('#contentList').append(newItem);
+            $('#contentList .content-item').last().find('input[name="Titles[]"]').focus();
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        if (!form) return;
+
+        const get = (name) => form.elements[name];
+
+        form.addEventListener("submit", function (e) {
+            const requiredFields = [
+                "casetitle",
+                "industry",
+                "casecode",
+                "caseteach",
+                "pricers",
+                "pricedollar",
+                "country",
+                "subject",
+                "CaseLength",
+                "Period",
+                "PubDate",
+                "Organization",
+                "Themes",
+                "Description",
+                "Keywords"
+            ];
+
+            for (const name of requiredFields) {
+                const field = get(name);
+                if (!field || !field.value.trim()) {
+                    alert(`Please fill in the ${name.replace(/([A-Z])/g, ' $1')}.`);
+                    field?.focus();
+                    e.preventDefault();
+                    return;
+                }
+            }
+
+            // Validate numeric prices
+            const priceRs = parseFloat(get("pricers").value);
+            const priceDollar = parseFloat(get("pricedollar").value);
+
+            if (isNaN(priceRs) || priceRs < 0) {
+                alert("Please enter a valid non-negative Price (Rs).");
+                get("pricers").focus();
+                e.preventDefault();
+                return;
+            }
+
+            if (isNaN(priceDollar) || priceDollar < 0) {
+                alert("Please enter a valid non-negative Price (Dollar).");
+                get("pricedollar").focus();
+                e.preventDefault();
+                return;
+            }
+
+            // Validate subject dropdown
+            const subject = get("subject");
+            if (subject && (!subject.value || subject.value === "Select Subject")) {
+                alert("Please select a Subject.");
+                subject.focus();
+                e.preventDefault();
+                return;
+            }
+
+            // Validate content blocks
+            const titles = document.querySelectorAll("input[name='Titles[]']");
+            const texts = document.querySelectorAll("textarea[name='Texts[]']");
+
+            for (let i = 0; i < titles.length; i++) {
+                if (!titles[i].value.trim()) {
+                    alert(`Please fill in the title for content block ${i + 1}.`);
+                    titles[i].focus();
+                    e.preventDefault();
+                    return;
+                }
+                if (!texts[i].value.trim()) {
+                    alert(`Please fill in the text for content block ${i + 1}.`);
+                    texts[i].focus();
+                    e.preventDefault();
+                    return;
+                }
+            }
+
+            // Validate PDF file type
+            const fileInput = get("PdfFile");
+            if (fileInput && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                if (file.type !== "application/pdf") {
+                    alert("Only PDF files are allowed.");
+                    fileInput.focus();
+                    e.preventDefault();
+                    return;
+                }
+            }
+        });
+    });
+</script>
+@*<script>
+        $(document).ready(function () {
+            // Enable text editor
+            $("#txtArea").jqte();
+
+            function encodeHTML(s) {
+                if (typeof s !== 'string') return '';
+
+                var encoded = s;
+                encoded = encoded.replaceAll('&', '&amp;');
+                encoded = encoded.replaceAll('>', '&gt;');
+                encoded = encoded.replaceAll('<', '&lt;');
+                encoded = encoded.replaceAll('"', '&quot;');
+                encoded = encoded.replaceAll("'", '&apos;');
+                encoded = encoded.replaceAll("//", '!!');
+
+                return encoded;
+            }
+
+            $("#templateForm").on('submit', function (e) {
+                e.preventDefault();
+
+                var category = $("#category").val();
+                var templateName = $("#templateName").val();
+                var htmlContent = $("#txtArea").val();
+                var encodedContent = encodeHTML(htmlContent);
+
+                // Set the encoded content to the hidden input field
+                $("#txteditorhid").val(encodedContent);
+
+                // Prepare FormData object to send to server
+                var formData = new FormData();
+                formData.append('category', category);
+                formData.append('templateName', templateName);
+                formData.append('txteditorhid', encodedContent);
+                formData.append('signature', $('#signature')[0].files[0]);
+
+                var currentPage = window.location.pathname;
+                $.ajax({
+                    //url: 'Submit_Template',
+                    url: '@Url.Action("Submit_Template", "Login")',
+                    method: 'POST',
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function (response) {
+                        alert("Template Created Succesfully")
+                        location.reload(); // Reload page after successful update/delete
+                        console.log('Form submitted successfully');
+                        console.log(response);
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error response if needed
+                        console.error('Error submitting form:', error);
+                    }
+                });
+            });
+
+        });
+    </script>*@
