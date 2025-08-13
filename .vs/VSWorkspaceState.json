@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ICMR",
+    "\\ICMR\\Views",
+    "\\ICMR\\Views\\Home"
   ],
-  "SelectedNode": "\\ICMR.sln",
+  "SelectedNode": "\\ICMR\\Views\\Home\\_CaseStudiesPartial.cshtml",
   "PreviewInSolutionExplorer": false
 }
