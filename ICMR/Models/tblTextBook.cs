@@ -42,6 +42,5 @@ namespace ICMR.Models
         public virtual ICollection<tblChapter> tblChapters { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTextBookImg> tblTextBookImgs { get; set; }
-        public string WorkBookPdf { get; internal set; }
     }
 }

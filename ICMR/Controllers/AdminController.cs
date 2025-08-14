@@ -1450,82 +1450,82 @@ namespace ICMR.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult AddCaseVolumes(FormCollection form, HttpPostedFileBase coverImage)
-        {
-            string email = Session["UserEmail"] as string;
+        //[HttpPost]
+        //public ActionResult AddCaseVolumes(FormCollection form, HttpPostedFileBase coverImage)
+        //{
+        //    string email = Session["UserEmail"] as string;
 
-            if (string.IsNullOrEmpty(email))
-            {
-                TempData["Error"] = "User session expired. Please login again.";
-                return RedirectToAction("Login", "Account");
-            }
+        //    if (string.IsNullOrEmpty(email))
+        //    {
+        //        TempData["Error"] = "User session expired. Please login again.";
+        //        return RedirectToAction("Login", "Account");
+        //    }
 
-            var user = db.ICMRLogins.FirstOrDefault(u => u.EmailId == email);
-            if (user == null)
-            {
-                TempData["Error"] = "User not found.";
-                return RedirectToAction("Login", "Account");
-            }
+        //    var user = db.ICMRLogins.FirstOrDefault(u => u.EmailId == email);
+        //    if (user == null)
+        //    {
+        //        TempData["Error"] = "User not found.";
+        //        return RedirectToAction("Login", "Account");
+        //    }
 
-            string userEmpId = user.EmpId;
+        //    string userEmpId = user.EmpId;
 
-            string fileName = "";
-            if (coverImage != null && coverImage.ContentLength > 0)
-            {
-                fileName = Path.GetFileName(coverImage.FileName);
-                string path = Path.Combine(Server.MapPath("~/UploadedImages"), fileName);
-                coverImage.SaveAs(path);
-            }
-            var ebook = new tblCaseStudyVolume
-            {
-                Title = form["Title"],
-                Volume = form["Volume"],
-                Category = form["Category"],
-                UserId = userEmpId,
-                CreatedOn = DateTime.Now,
-                IpAdress = SecureHelp.GetIPAddress(),
-                LocalIpAddress = SecureHelp.GetLocalIPAddress(),
-                Pages = Convert.ToInt32(form["pages"]),
-                Price = Convert.ToDecimal(form["ebookPrice"]),
-                Year = Convert.ToInt32(form["year"]),
-                Month = Convert.ToInt32(form["month"]),
-                CoverImg = fileName,
-                CasePdf = form["formate"]
-            };
+        //    string fileName = "";
+        //    if (coverImage != null && coverImage.ContentLength > 0)
+        //    {
+        //        fileName = Path.GetFileName(coverImage.FileName);
+        //        string path = Path.Combine(Server.MapPath("~/UploadedImages"), fileName);
+        //        coverImage.SaveAs(path);
+        //    }
+        //    var ebook = new tblCaseStudyVolume
+        //    {
+        //        Title = form["Title"],
+        //        Volume = form["Volume"],
+        //        Category = form["Category"],
+        //        UserId = userEmpId,
+        //        CreatedOn = DateTime.Now,
+        //        IpAdress = SecureHelp.GetIPAddress(),
+        //        LocalIpAddress = SecureHelp.GetLocalIPAddress(),
+        //        Pages = Convert.ToInt32(form["pages"]),
+        //        Price = Convert.ToDecimal(form["ebookPrice"]),
+        //        Year = Convert.ToInt32(form["year"]),
+        //        Month = Convert.ToInt32(form["month"]),
+        //        CoverImg = fileName,
+        //        CasePdf = form["formate"]
+        //    };
 
-            db.tblCaseStudyVolumes.Add(ebook);
+        //    db.tblCaseStudyVolumes.Add(ebook);
 
-            int ebookId = ebook.CaseTudyVolumeId;
+        //    int ebookId = ebook.CaseTudyVolumeId;
 
-            var categories = form.GetValues("subjectCategory");
-            var titles = form.GetValues("casetitle");
-            var months = form.GetValues("caseMonth");
-            var years = form.GetValues("caseYear");
+        //    var categories = form.GetValues("subjectCategory");
+        //    var titles = form.GetValues("casetitle");
+        //    var months = form.GetValues("caseMonth");
+        //    var years = form.GetValues("caseYear");
 
-            if (categories != null && titles != null)
-            {
-                for (int i = 0; i < categories.Length; i++)
-                {
-                    tblCaseStudy c = new tblCaseStudy
-                    {
-                        CaseTudyVolumeId = ebookId,
-                        CaseTitle = titles[i],
-                        SubjectCategory = categories[i],
-                        Category = ebook.Category,
-                        UserId = userEmpId,
-                        Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(months[i])),
-                        Year = Convert.ToInt32(years[i]),
-                        CreatedOn = DateTime.Now,
-                    };
-                    db.tblCaseStudies.Add(c);
-                }
-            }
+        //    if (categories != null && titles != null)
+        //    {
+        //        for (int i = 0; i < categories.Length; i++)
+        //        {
+        //            tblCaseStudy c = new tblCaseStudy
+        //            {
+        //                CaseTudyVolumeId = ebookId,
+        //                CaseTitle = titles[i],
+        //                SubjectCategory = categories[i],
+        //                Category = ebook.Category,
+        //                UserId = userEmpId,
+        //                Month = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(months[i])),
+        //                Year = Convert.ToInt32(years[i]),
+        //                CreatedOn = DateTime.Now,
+        //            };
+        //            db.tblCaseStudies.Add(c);
+        //        }
+        //    }
 
-            db.SaveChanges();
-            TempData["AddEbookCasesMessage"] = "Inserted successfully!";
-            return RedirectToAction("AddEbookCases");
-        }
+        //    db.SaveChanges();
+        //    TempData["AddEbookCasesMessage"] = "Inserted successfully!";
+        //    return RedirectToAction("AddEbookCases");
+        //}
 
 
     }

@@ -194,6 +194,28 @@
     <Property Name="TransactionDate" Type="datetime" />
     <Property Name="TransactionAmount" Type="decimal" Precision="10" Scale="2" />
   </EntityType>
+  <EntityType Name="tblBlogImages">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogId" Type="int" Nullable="false" />
+    <Property Name="ImageUrl" Type="varchar" MaxLength="750" Nullable="false" />
+    <Property Name="Caption" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tblBlogs">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuthorName" Type="varchar" MaxLength="150" />
+    <Property Name="AuthorImg" Type="varchar" MaxLength="750" />
+    <Property Name="AuthorMobileNo" Type="varchar" MaxLength="15" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentOrg" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="BlogContent" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="tblCaseDetails">
     <Key>
       <PropertyRef Name="Id" />
@@ -202,40 +224,6 @@
     <Property Name="CaseId" Type="int" Nullable="false" />
     <Property Name="Introduction" Type="varchar(max)" />
     <Property Name="Content" Type="varchar(max)" />
-  </EntityType>
-  <EntityType Name="tblCaseStudy">
-    <Key>
-      <PropertyRef Name="CaseId" />
-    </Key>
-    <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CaseTudyVolumeId" Type="int" Nullable="false" />
-    <Property Name="CaseTitle" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="UserId" Type="varchar" MaxLength="30" />
-    <Property Name="SubjectCategory" Type="nvarchar" MaxLength="100" />
-    <Property Name="Category" Type="nvarchar" MaxLength="100" />
-    <Property Name="Year" Type="int" />
-    <Property Name="Month" Type="varchar" MaxLength="50" />
-    <Property Name="Casecode" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="tblCaseStudyVolume">
-    <Key>
-      <PropertyRef Name="CaseTudyVolumeId" />
-    </Key>
-    <Property Name="CaseTudyVolumeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="Volume" Type="nvarchar" MaxLength="100" />
-    <Property Name="Category" Type="nvarchar" MaxLength="100" />
-    <Property Name="UserId" Type="varchar" MaxLength="30" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="IpAdress" Type="nvarchar" MaxLength="50" />
-    <Property Name="Pages" Type="int" />
-    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="Year" Type="int" />
-    <Property Name="Month" Type="int" />
-    <Property Name="CoverImg" Type="nvarchar" MaxLength="255" />
-    <Property Name="CasePdf" Type="nvarchar" MaxLength="255" />
-    <Property Name="LocalIpAddress" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tblChapters">
     <Key>
@@ -312,6 +300,21 @@
     <Property Name="TextBookPdf" Type="nvarchar" MaxLength="255" />
     <Property Name="Overview" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="tblVideos">
+    <Key>
+      <PropertyRef Name="VideoId" />
+    </Key>
+    <Property Name="VideoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="250" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="Image" Type="varchar" MaxLength="750" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="15" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="TypeOfSpeak" Type="varchar" MaxLength="150" />
+    <Property Name="CurrentOrg" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="VideoURL" Type="varchar" MaxLength="350" />
+  </EntityType>
   <Association Name="FK__tblCaseDe__CaseI__02FC7413">
     <End Role="AvaCases" Type="Self.AvaCases" Multiplicity="1" />
     <End Role="tblCaseDetails" Type="Self.tblCaseDetails" Multiplicity="*" />
@@ -324,17 +327,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblCaseStudy_tblCaseStudyVolume">
-    <End Role="tblCaseStudyVolume" Type="Self.tblCaseStudyVolume" Multiplicity="1">
+  <Association Name="FK_tblBlogImages_tblBlogs">
+    <End Role="tblBlogs" Type="Self.tblBlogs" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="tblCaseStudy" Type="Self.tblCaseStudy" Multiplicity="*" />
+    <End Role="tblBlogImages" Type="Self.tblBlogImages" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblCaseStudyVolume">
-        <PropertyRef Name="CaseTudyVolumeId" />
+      <Principal Role="tblBlogs">
+        <PropertyRef Name="BlogId" />
       </Principal>
-      <Dependent Role="tblCaseStudy">
-        <PropertyRef Name="CaseTudyVolumeId" />
+      <Dependent Role="tblBlogImages">
+        <PropertyRef Name="BlogId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -386,21 +389,22 @@
     <EntitySet Name="ICMRLogin" EntityType="Self.ICMRLogin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Master_icmr" EntityType="Self.Master_icmr" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="proccases" EntityType="Self.proccases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBlogImages" EntityType="Self.tblBlogImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBlogs" EntityType="Self.tblBlogs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCaseDetails" EntityType="Self.tblCaseDetails" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblCaseStudy" EntityType="Self.tblCaseStudy" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblCaseStudyVolume" EntityType="Self.tblCaseStudyVolume" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblChapters" EntityType="Self.tblChapters" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblEbookCases" EntityType="Self.tblEbookCases" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblEbooks" EntityType="Self.tblEbooks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblTextBookImgs" EntityType="Self.tblTextBookImgs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblTextBooks" EntityType="Self.tblTextBooks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVideos" EntityType="Self.tblVideos" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__tblCaseDe__CaseI__02FC7413" Association="Self.FK__tblCaseDe__CaseI__02FC7413">
       <End Role="AvaCases" EntitySet="AvaCases" />
       <End Role="tblCaseDetails" EntitySet="tblCaseDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblCaseStudy_tblCaseStudyVolume" Association="Self.FK_tblCaseStudy_tblCaseStudyVolume">
-      <End Role="tblCaseStudyVolume" EntitySet="tblCaseStudyVolume" />
-      <End Role="tblCaseStudy" EntitySet="tblCaseStudy" />
+    <AssociationSet Name="FK_tblBlogImages_tblBlogs" Association="Self.FK_tblBlogImages_tblBlogs">
+      <End Role="tblBlogs" EntitySet="tblBlogs" />
+      <End Role="tblBlogImages" EntitySet="tblBlogImages" />
     </AssociationSet>
     <AssociationSet Name="FK_tblChapters_tblTextBooks" Association="Self.FK_tblChapters_tblTextBooks">
       <End Role="tblTextBooks" EntitySet="tblTextBooks" />

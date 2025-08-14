@@ -292,39 +292,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tblCaseStudies">
-      <EntityTypeMapping TypeName="ICMRModel.tblCaseStudy">
-        <MappingFragment StoreEntitySet="tblCaseStudy">
-          <ScalarProperty Name="Casecode" ColumnName="Casecode" />
-          <ScalarProperty Name="Month" ColumnName="Month" />
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="Category" ColumnName="Category" />
-          <ScalarProperty Name="SubjectCategory" ColumnName="SubjectCategory" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="CaseTitle" ColumnName="CaseTitle" />
-          <ScalarProperty Name="CaseTudyVolumeId" ColumnName="CaseTudyVolumeId" />
-          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+    <EntitySetMapping Name="tblBlogImages">
+      <EntityTypeMapping TypeName="ICMRModel.tblBlogImage">
+        <MappingFragment StoreEntitySet="tblBlogImages">
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tblCaseStudyVolumes">
-      <EntityTypeMapping TypeName="ICMRModel.tblCaseStudyVolume">
-        <MappingFragment StoreEntitySet="tblCaseStudyVolume">
-          <ScalarProperty Name="LocalIpAddress" ColumnName="LocalIpAddress" />
-          <ScalarProperty Name="CasePdf" ColumnName="CasePdf" />
-          <ScalarProperty Name="CoverImg" ColumnName="CoverImg" />
-          <ScalarProperty Name="Month" ColumnName="Month" />
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Pages" ColumnName="Pages" />
-          <ScalarProperty Name="IpAdress" ColumnName="IpAdress" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Category" ColumnName="Category" />
-          <ScalarProperty Name="Volume" ColumnName="Volume" />
+    <EntitySetMapping Name="tblBlogs">
+      <EntityTypeMapping TypeName="ICMRModel.tblBlog">
+        <MappingFragment StoreEntitySet="tblBlogs">
+          <ScalarProperty Name="BlogContent" ColumnName="BlogContent" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CurrentOrg" ColumnName="CurrentOrg" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AuthorMobileNo" ColumnName="AuthorMobileNo" />
+          <ScalarProperty Name="AuthorImg" ColumnName="AuthorImg" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVideos">
+      <EntityTypeMapping TypeName="ICMRModel.tblVideo">
+        <MappingFragment StoreEntitySet="tblVideos">
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CurrentOrg" ColumnName="CurrentOrg" />
+          <ScalarProperty Name="TypeOfSpeak" ColumnName="TypeOfSpeak" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="CaseTudyVolumeId" ColumnName="CaseTudyVolumeId" />
+          <ScalarProperty Name="VideoId" ColumnName="VideoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -22,9 +22,10 @@
         <AssociationConnector Association="ICMRModel.FK_tblChapters_tblTextBooks" ManuallyRouted="false" />
         <AssociationConnector Association="ICMRModel.FK_tblEbookCases_tblEbooks" ManuallyRouted="false" />
         <AssociationConnector Association="ICMRModel.FK_tblTextBookImgs_tblTextBooks" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ICMRModel.tblCaseStudy" Width="1.5" PointX="15.625" PointY="1.375" />
-        <EntityTypeShape EntityType="ICMRModel.tblCaseStudyVolume" Width="1.5" PointX="13.375" PointY="1" />
-        <AssociationConnector Association="ICMRModel.FK_tblCaseStudy_tblCaseStudyVolume" />
+        <EntityTypeShape EntityType="ICMRModel.tblBlogImage" Width="1.5" PointX="14.625" PointY="6.375" />
+        <EntityTypeShape EntityType="ICMRModel.tblBlog" Width="1.5" PointX="12.375" PointY="6" />
+        <EntityTypeShape EntityType="ICMRModel.tblVideo" Width="1.5" PointX="13.375" PointY="9.75" />
+        <AssociationConnector Association="ICMRModel.FK_tblBlogImages_tblBlogs" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

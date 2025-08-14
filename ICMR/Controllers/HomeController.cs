@@ -1082,7 +1082,6 @@ namespace ICMR.Controllers
                     TextBookId = tb.TextBookId,
                     Title = tb.Title,
                     TextBookPdf = tb.TextBookPdf,
-                    WorkBookPdf = tb.WorkBookPdf,
                     TextBookPages = tb.TextBookPages,
                     WorkBookPages = tb.WorkBookPages,
                     TextBookprise = tb.TextBookprise,
@@ -1132,5 +1131,32 @@ namespace ICMR.Controllers
             var details = db.tblTextBooks.OrderByDescending(e => e.CreatedOn).ToList();
             return View(details);
         }
+
+
+        public ActionResult AddVideos()
+        {
+            var model = new tblVideo(); // create an empty instance
+            return View(model);
+        }
+
+
+        // POST: Video/Add
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddVideos(tblVideo model)
+        {
+            if (ModelState.IsValid)
+            {
+                db.tblVideos.Add(model);
+                db.SaveChanges();
+
+                TempData["Success"] = "Video details inserted successfully!";
+                return RedirectToAction("AddVideos");
+            }
+
+            TempData["Error"] = "Please fill all required fields.";
+            return View(model);
+        }
+
     }
 }

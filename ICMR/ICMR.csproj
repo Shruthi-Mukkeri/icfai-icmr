@@ -186,13 +186,13 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SecureHelp.cs" />
+    <Compile Include="Models\tblBlog.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblBlogImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblCaseDetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblCaseStudy.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblCaseStudyVolume.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblChapter.cs">
@@ -208,6 +208,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblTextBookImg.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblVideo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TextBookCaseViewModel.cs" />
@@ -627,6 +630,7 @@
     <Content Include="Views\Home\ByCategoryDetails.cshtml" />
     <Content Include="UploadedImages\IUP Publication Process_Flow Diagram.docx" />
     <Content Include="UploadedImages\IUP_Online_Publishing_House_final.docx" />
+    <Content Include="Views\Home\AddVideos.cshtml" />
     <None Include="Views\Home\ByTextCategory.cshtml" />
     <None Include="Views\Home\ByTextCategoryDetails.cshtml" />
     <Content Include="Views\Home\DisplayTextBooks.cshtml" />

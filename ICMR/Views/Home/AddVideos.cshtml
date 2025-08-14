@@ -1,0 +1,72 @@
+﻿@model ICMR.Models.tblVideo
+@{
+    ViewBag.Title = "Add Video";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // optional
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Add Video Details</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    @using (Html.BeginForm("AddVideos", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+<div class="row">
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Enter video title" })
+    </div>
+
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter name" })
+    </div>
+
+    <div class="col-md-6 mb-3">
+        @Html.Label("Image", "Upload Image")
+        <input type="file" name="ImageFile" class="form-control" accept="image/*"/>
+    </div>
+
+
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.MobileNo)
+        @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", placeholder = "Enter mobile number" })
+    </div>
+
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.EmailId)
+        @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", placeholder = "Enter email" })
+    </div>
+
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.TypeOfSpeak)
+        @Html.TextBoxFor(m => m.TypeOfSpeak, new { @class = "form-control", placeholder = "Enter type of speak" })
+    </div>
+
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.CurrentOrg)
+        @Html.TextBoxFor(m => m.CurrentOrg, new { @class = "form-control", placeholder = "Enter current organization" })
+    </div>
+
+    <div class="col-md-6 mb-3">
+        @Html.LabelFor(m => m.Designation)
+        @Html.TextBoxFor(m => m.Designation, new { @class = "form-control", placeholder = "Enter designation" })
+    </div>
+
+    <div class="col-md-12 mb-3">
+        @Html.LabelFor(m => m.VideoURL)
+        @Html.TextBoxFor(m => m.VideoURL, new { @class = "form-control", placeholder = "Enter video URL" })
+    </div>
+</div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }
+</div>

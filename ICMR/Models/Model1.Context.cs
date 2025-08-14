@@ -38,7 +38,8 @@ namespace ICMR.Models
         public virtual DbSet<tblEbook> tblEbooks { get; set; }
         public virtual DbSet<tblTextBookImg> tblTextBookImgs { get; set; }
         public virtual DbSet<tblTextBook> tblTextBooks { get; set; }
-        public virtual DbSet<tblCaseStudy> tblCaseStudies { get; set; }
-        public virtual DbSet<tblCaseStudyVolume> tblCaseStudyVolumes { get; set; }
+        public virtual DbSet<tblBlogImage> tblBlogImages { get; set; }
+        public virtual DbSet<tblBlog> tblBlogs { get; set; }
+        public virtual DbSet<tblVideo> tblVideos { get; set; }
     }
 }
